@@ -1,92 +1,78 @@
 # Star Settlers
 
 
+## Krótki opis fabularny:
+Od upadku Federacji minęło już trochę lat, jednak wszyscy nadal pamiętają chaos jaki mu towarzyszył. Całe planety zostały odcięte od dostaw surowców, a ich mieszkańcy w panice unicestwili sami siebie, walcząc o zapasy. Mimo opanowania technologii pozwalającej na podróż w kosmos, ludzie cofnęli się do czasów, w których rządzą najsilniejsi - kolonie, które przetrwały początkową panikę, zwróciły się przeciwko swoim sąsiadom. Całe floty statków kosmicznych zostały unicestwione w desperackiej wojnie o przetrwanie.
 
-## Getting started
+Wojska kolonialne nie dysponowały jednak siłą, która mogłaby się równać z siłą pieniądza. Megakorporacje, prowadzące biznes w każdym zakątku dawnej Federacji, posiadały ogromne floty własnych okrętów, których dawniej używały do ochrony transportów, a w czasie kryzysu posłużyły się nimi do przejęcia kontroli w galaktyce. Teraz, kiedy kurz bitwy opadł i każda skolonizowana planeta znajduje się pod ich władaniem, megakorporacje wyciągają ręce po niezbadane systemy z pogranicza Federacji.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+Gracz ma wcielić się w rolę kontraktora zatrudnionego przez jedną z megakorporacji, w celu zbadania nieznanej planety oraz ustanowienia na niej kolonii. Nie jest to jednak łatwe zadanie, bo poza otrzymaniem podstawowych surowców i narzędzi, gracz jest zdany na siebie - firma oczekuje rezultatów, a jeśli gracz nie jest w stanie ich przedstawić, to na jego miejsce można łatwo znaleźć kogoś nowego. Poza tym, to że planeta jest nie skolonizowana, nie znaczy że nikt na niej nie mieszka - po przejęciu kontroli przez megakorporacje, część ludzi niezadowolonych z ich rządów uciekło szukać nowego domu w niezbadanych fragmentach kosmosu. Zagrożeniem mogą być również ekstremalne warunki, panujące na tej dzikiej planecie, czy być może nawet obce formy życia.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
 
-## Add your files
+# Funkcjonalności:
+## Eksploracja
+Gracz ma mapę na której widzi początkowo tylko swoją bazę i tereny wokół niej. Musi odkrywać nieznany mu świat.
+Dystans jaki gracz może pokonać zależy od posiadanych przez niego zasobów, początkowo tlen w kombinezonie szybko się kończy dlatego też możliwy do pokonania dystans jest niewielki. Z czasem gracz może używać urządzeń takich jak łazik by zwiększyć ten dystans i odkryć nowe rejony mapy. 
+Budowa
+Gracz może konstruować różnego rodzaju budowle w zasięgu bazy. Budowle te mogą zwiększać produkcję zasobów w kolejnych turach, tworzyć ochronę przed przeciwnikami lub złymi wydarzeniami, obniżać zużycie tlenu na wyprawach lub być wymagane w celu dalszej progresji fabularnej.
+Budowle wymagają surowców, np. stali, prądu i wody, które możemy odnajdywać poprzez eksplorację lub produkować w pozostałych budynkach. Stworzenie budowli zajmuje także określony czas (przykładowo, można zbudować jedną rzecz na turę).
+W oddalonych regionach mapy, gracz będzie mógł znaleźć “opuszczone obozowiska”, które następnie będzie mógł naprawić i rozpoczynać kolejny dzień w ich miejscu, zamiast powracać do głównej bazy. Da mu to także kolejny teren do rozbudowy.
+## Baza
+W bazie gracz może przeprowadzać badania, na zebranych podczas eksploracji próbkach, handlować surowcami i decydować jaki sprzęt chce ze sobą zabrać na następną wyprawę. 
+Badania mogą przynosić zyski oraz odblokowywać nowe konstrukcje lub przedmioty. 
+Poprzez handel gracz może wymieniać dane o planecie na walutę za którą może kupować wyjątkowy ekwipunek. Może również wymieniać nadmiarowe surowce na inne po zawyżonej cenie.
+Wybór ekwipunku wpływa na opcje interakcji z otoczeniem, jakie gracz będzie miał dostępne podczas wyprawy.
+## Ekwipunek
+Podczas eksploracji przydatne będą narzędzia takie jak zestaw do pobierania próbek ziemi czy radar do poszukiwania części rozbitych zrzutów z zasobami.
+Miejsce w ekwipunku jest jednak ograniczone. Co sprawia że każda ekspedycja wymaga planowania i ustalenia jej celu. Po powrocie z podróży zdobyte zasoby można bezpiecznie przechować w bazie, zbadać, lub wykorzystać w budowie.
+(Opcjonalne) Różnego rodzaju bronie. Dystansowa, biała itp.
+## Interakcje z NPC
+Prowadzenie pokojowych rozmów.
+Podejmowanie walki z przeciwnikami.
+Nie każdy przeciwnik będzie możliwy do pokonania pokojowo, oraz nie każdego będzie można pokonać siłowo. Obie opcje mogą zakończyć się stratami jak i zyskami.
+(Opcjonalne) Gracz może otrzymać też proste zadania poboczne od napotkanych NPC, których wykonanie będzie wiązało się z nowym przedmiotem, walutą lub surowcami.
+(Opcjonalne) Frakcje przeciwników, gdzie możemy zaprzyjaźnić się z daną frakcją przez co nie będziemy mieli problemów się z nimi dogadać.
+(Opcjonalne) Rekrutowanie NPC do drużyny eksploracyjnej.
+## Świat
+Losowo generowana mapa
+Mapa podzielona na siatkę
+Podział świata na parę regionów, różniących się klimatem i rzeczami jakie możemy tam napotkać.
+Każdy region będzie posiadał część potrzebną do zakończenia rozgrywki.
+(Opcjonalne) Modyfikatory terenu, pogoda i inne rzeczy wpływające losowo na kolejne tury
+## Bohater
+Bohater jest śmiertelny.
+Na starcie można wybrać pod jaką korporację podlega nasza postać, co daje graczowi różne modyfikatory na całą grę.
+Bohater będzie posiadał statystyki (np. siła, charyzma, szybkość) oraz poziom. 
+Rozwój postaci w formie perków, które zdobywamy poprzez badania a dodają unikalne zdolności oraz statystyki zdobywane wraz z punktami milowymi eksploracji.
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+	
 
-```
-cd existing_repo
-git remote add origin https://umcs.schneiderp.ovh/jakub.salek/star-settlers.git
-git branch -M main
-git push -uf origin main
-```
 
-## Integrate with your tools
+## Decyzje Techniczne:
 
-- [ ] [Set up project integrations](https://umcs.schneiderp.ovh/jakub.salek/star-settlers/-/settings/integrations)
+Zdecydowaliśmy się na użycie silnika Godot lub Unity, dokładną decyzję podejmiemy po dokładnym zapoznaniu się z tymi technologiami.
+Przedstawimy świat za pomocą siatki heksagonalnej ze względu na jej bardziej futurystyczny wygląd i większą swobodę ruchu. Chcemy by mnogość wyborów i możliwości eksploracji były wyczuwalne w każdym aspekcie gry.
 
-## Collaborate with your team
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+## Decyzje artystyczne:
 
-## Test and Deploy
+Chcemy by motyw wyboru korporacji i pewnej rywalizacji o podbój kosmosu przywodził na myśl zimną wojnę i pierwsze wyprawy człowieka w kosmos. By ułatwić graczom tą podróż w czasie decydujemy się na pixelowa oprawa graficzna oraz 8-bitową muzykę które współgrają z motywem gry.
 
-Use the built-in continuous integration in GitLab.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
 
-***
+## Przykładowy model postaci gracza:
 
-# Editing this README
+![](MDImages/model_postaci.png)
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+## Przykładowy wygląd mapy:
 
-## Name
-Choose a self-explaining name for your project.
+![](MDImages/przykladowa_mapa.png)
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+## Inspiracje:
++ Marsjanin
++ Terraformacja Marsa
++ Heroes
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+![](MDImages/postac2.jpg)
