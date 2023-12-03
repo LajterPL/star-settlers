@@ -1,0 +1,331 @@
+[gd_scene format=3 uid="uid://e3404l5ig66d"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="ScrollSaves" type="ScrollContainer" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.9
+horizontal_scroll_mode = 0
+
+[node name="SavesList" type="VBoxContainer" parent="ScrollSaves"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+metadata/_edit_lock_ = true
+
+[node name="Save" type="HBoxContainer" parent="ScrollSaves/SavesList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Left Column" type="VBoxContainer" parent="ScrollSaves/SavesList/Save"]
+layout_mode = 2
+
+[node name="SeedLabel" type="Label" parent="ScrollSaves/SavesList/Save/Left Column"]
+layout_mode = 2
+text = "Seed: 0123456789"
+
+[node name="DateLabel" type="Label" parent="ScrollSaves/SavesList/Save/Left Column"]
+layout_mode = 2
+text = "Date: 0123456789"
+
+[node name="LevelLabel" type="Label" parent="ScrollSaves/SavesList/Save"]
+layout_mode = 2
+text = "Level: 1"
+
+[node name="TimeLabel" type="Label" parent="ScrollSaves/SavesList/Save"]
+layout_mode = 2
+text = "Time spent: 1h 0m"
+
+[node name="Save2" type="HBoxContainer" parent="ScrollSaves/SavesList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Left Column" type="VBoxContainer" parent="ScrollSaves/SavesList/Save2"]
+layout_mode = 2
+
+[node name="SeedLabel" type="Label" parent="ScrollSaves/SavesList/Save2/Left Column"]
+layout_mode = 2
+text = "Seed: 0123456789"
+
+[node name="DateLabel" type="Label" parent="ScrollSaves/SavesList/Save2/Left Column"]
+layout_mode = 2
+text = "Date: 0123456789"
+
+[node name="LevelLabel" type="Label" parent="ScrollSaves/SavesList/Save2"]
+layout_mode = 2
+text = "Level: 1"
+
+[node name="TimeLabel" type="Label" parent="ScrollSaves/SavesList/Save2"]
+layout_mode = 2
+text = "Time spent: 1h 0m"
+
+[node name="Save3" type="HBoxContainer" parent="ScrollSaves/SavesList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Left Column" type="VBoxContainer" parent="ScrollSaves/SavesList/Save3"]
+layout_mode = 2
+
+[node name="SeedLabel" type="Label" parent="ScrollSaves/SavesList/Save3/Left Column"]
+layout_mode = 2
+text = "Seed: 0123456789"
+
+[node name="DateLabel" type="Label" parent="ScrollSaves/SavesList/Save3/Left Column"]
+layout_mode = 2
+text = "Date: 0123456789"
+
+[node name="LevelLabel" type="Label" parent="ScrollSaves/SavesList/Save3"]
+layout_mode = 2
+text = "Level: 1"
+
+[node name="TimeLabel" type="Label" parent="ScrollSaves/SavesList/Save3"]
+layout_mode = 2
+text = "Time spent: 1h 0m"
+
+[node name="Save4" type="HBoxContainer" parent="ScrollSaves/SavesList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Left Column" type="VBoxContainer" parent="ScrollSaves/SavesList/Save4"]
+layout_mode = 2
+
+[node name="SeedLabel" type="Label" parent="ScrollSaves/SavesList/Save4/Left Column"]
+layout_mode = 2
+text = "Seed: 0123456789"
+
+[node name="DateLabel" type="Label" parent="ScrollSaves/SavesList/Save4/Left Column"]
+layout_mode = 2
+text = "Date: 0123456789"
+
+[node name="LevelLabel" type="Label" parent="ScrollSaves/SavesList/Save4"]
+layout_mode = 2
+text = "Level: 1"
+
+[node name="TimeLabel" type="Label" parent="ScrollSaves/SavesList/Save4"]
+layout_mode = 2
+text = "Time spent: 1h 0m"
+
+[node name="Save5" type="HBoxContainer" parent="ScrollSaves/SavesList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Left Column" type="VBoxContainer" parent="ScrollSaves/SavesList/Save5"]
+layout_mode = 2
+
+[node name="SeedLabel" type="Label" parent="ScrollSaves/SavesList/Save5/Left Column"]
+layout_mode = 2
+text = "Seed: 0123456789"
+
+[node name="DateLabel" type="Label" parent="ScrollSaves/SavesList/Save5/Left Column"]
+layout_mode = 2
+text = "Date: 0123456789"
+
+[node name="LevelLabel" type="Label" parent="ScrollSaves/SavesList/Save5"]
+layout_mode = 2
+text = "Level: 1"
+
+[node name="TimeLabel" type="Label" parent="ScrollSaves/SavesList/Save5"]
+layout_mode = 2
+text = "Time spent: 1h 0m"
+
+[node name="Save6" type="HBoxContainer" parent="ScrollSaves/SavesList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Left Column" type="VBoxContainer" parent="ScrollSaves/SavesList/Save6"]
+layout_mode = 2
+
+[node name="SeedLabel" type="Label" parent="ScrollSaves/SavesList/Save6/Left Column"]
+layout_mode = 2
+text = "Seed: 0123456789"
+
+[node name="DateLabel" type="Label" parent="ScrollSaves/SavesList/Save6/Left Column"]
+layout_mode = 2
+text = "Date: 0123456789"
+
+[node name="LevelLabel" type="Label" parent="ScrollSaves/SavesList/Save6"]
+layout_mode = 2
+text = "Level: 1"
+
+[node name="TimeLabel" type="Label" parent="ScrollSaves/SavesList/Save6"]
+layout_mode = 2
+text = "Time spent: 1h 0m"
+
+[node name="Save7" type="HBoxContainer" parent="ScrollSaves/SavesList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Left Column" type="VBoxContainer" parent="ScrollSaves/SavesList/Save7"]
+layout_mode = 2
+
+[node name="SeedLabel" type="Label" parent="ScrollSaves/SavesList/Save7/Left Column"]
+layout_mode = 2
+text = "Seed: 0123456789"
+
+[node name="DateLabel" type="Label" parent="ScrollSaves/SavesList/Save7/Left Column"]
+layout_mode = 2
+text = "Date: 0123456789"
+
+[node name="LevelLabel" type="Label" parent="ScrollSaves/SavesList/Save7"]
+layout_mode = 2
+text = "Level: 1"
+
+[node name="TimeLabel" type="Label" parent="ScrollSaves/SavesList/Save7"]
+layout_mode = 2
+text = "Time spent: 1h 0m"
+
+[node name="Save8" type="HBoxContainer" parent="ScrollSaves/SavesList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Left Column" type="VBoxContainer" parent="ScrollSaves/SavesList/Save8"]
+layout_mode = 2
+
+[node name="SeedLabel" type="Label" parent="ScrollSaves/SavesList/Save8/Left Column"]
+layout_mode = 2
+text = "Seed: 0123456789"
+
+[node name="DateLabel" type="Label" parent="ScrollSaves/SavesList/Save8/Left Column"]
+layout_mode = 2
+text = "Date: 0123456789"
+
+[node name="LevelLabel" type="Label" parent="ScrollSaves/SavesList/Save8"]
+layout_mode = 2
+text = "Level: 1"
+
+[node name="TimeLabel" type="Label" parent="ScrollSaves/SavesList/Save8"]
+layout_mode = 2
+text = "Time spent: 1h 0m"
+
+[node name="Save9" type="HBoxContainer" parent="ScrollSaves/SavesList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Left Column" type="VBoxContainer" parent="ScrollSaves/SavesList/Save9"]
+layout_mode = 2
+
+[node name="SeedLabel" type="Label" parent="ScrollSaves/SavesList/Save9/Left Column"]
+layout_mode = 2
+text = "Seed: 0123456789"
+
+[node name="DateLabel" type="Label" parent="ScrollSaves/SavesList/Save9/Left Column"]
+layout_mode = 2
+text = "Date: 0123456789"
+
+[node name="LevelLabel" type="Label" parent="ScrollSaves/SavesList/Save9"]
+layout_mode = 2
+text = "Level: 1"
+
+[node name="TimeLabel" type="Label" parent="ScrollSaves/SavesList/Save9"]
+layout_mode = 2
+text = "Time spent: 1h 0m"
+
+[node name="Save10" type="HBoxContainer" parent="ScrollSaves/SavesList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Left Column" type="VBoxContainer" parent="ScrollSaves/SavesList/Save10"]
+layout_mode = 2
+
+[node name="SeedLabel" type="Label" parent="ScrollSaves/SavesList/Save10/Left Column"]
+layout_mode = 2
+text = "Seed: 0123456789"
+
+[node name="DateLabel" type="Label" parent="ScrollSaves/SavesList/Save10/Left Column"]
+layout_mode = 2
+text = "Date: 0123456789"
+
+[node name="LevelLabel" type="Label" parent="ScrollSaves/SavesList/Save10"]
+layout_mode = 2
+text = "Level: 1"
+
+[node name="TimeLabel" type="Label" parent="ScrollSaves/SavesList/Save10"]
+layout_mode = 2
+text = "Time spent: 1h 0m"
+
+[node name="Save11" type="HBoxContainer" parent="ScrollSaves/SavesList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Left Column" type="VBoxContainer" parent="ScrollSaves/SavesList/Save11"]
+layout_mode = 2
+
+[node name="SeedLabel" type="Label" parent="ScrollSaves/SavesList/Save11/Left Column"]
+layout_mode = 2
+text = "Seed: 0123456789"
+
+[node name="DateLabel" type="Label" parent="ScrollSaves/SavesList/Save11/Left Column"]
+layout_mode = 2
+text = "Date: 0123456789"
+
+[node name="LevelLabel" type="Label" parent="ScrollSaves/SavesList/Save11"]
+layout_mode = 2
+text = "Level: 1"
+
+[node name="TimeLabel" type="Label" parent="ScrollSaves/SavesList/Save11"]
+layout_mode = 2
+text = "Time spent: 1h 0m"
+
+[node name="Save12" type="HBoxContainer" parent="ScrollSaves/SavesList"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Left Column" type="VBoxContainer" parent="ScrollSaves/SavesList/Save12"]
+layout_mode = 2
+
+[node name="SeedLabel" type="Label" parent="ScrollSaves/SavesList/Save12/Left Column"]
+layout_mode = 2
+text = "Seed: 0123456789"
+
+[node name="DateLabel" type="Label" parent="ScrollSaves/SavesList/Save12/Left Column"]
+layout_mode = 2
+text = "Date: 0123456789"
+
+[node name="LevelLabel" type="Label" parent="ScrollSaves/SavesList/Save12"]
+layout_mode = 2
+text = "Level: 1"
+
+[node name="TimeLabel" type="Label" parent="ScrollSaves/SavesList/Save12"]
+layout_mode = 2
+text = "Time spent: 1h 0m"
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_top = 0.92
+anchor_right = 0.3
+anchor_bottom = 1.0
+text = "Back"
+
+[node name="LoadButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.92
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Load
+"
