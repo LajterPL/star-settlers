@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvhsnl78x344t"]
+
+[ext_resource type="Script" path="res://Scenes/Main Menu/MainMenu.gd" id="1_4idhe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wau6p"]
+font_size = 100
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_4idhe")
+
+[node name="NewGameButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.081
+anchor_top = 0.349
+anchor_right = 0.165
+anchor_bottom = 0.474
+offset_left = 0.32
+offset_top = -0.279999
+offset_right = -0.200012
+offset_bottom = -0.280029
+text = "New Game"
+
+[node name="ContinueButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.187
+anchor_top = 0.461
+anchor_right = 0.312
+anchor_bottom = 0.626
+offset_left = -0.360016
+offset_top = 0.0799866
+offset_right = 0.639984
+offset_bottom = 0.279968
+grow_horizontal = 2
+grow_vertical = 2
+text = "Continue"
+
+[node name="SettingsButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.452
+anchor_top = 0.671
+anchor_right = 0.577
+anchor_bottom = 0.836
+offset_left = -0.560059
+offset_top = -0.119995
+offset_right = 0.439941
+offset_bottom = 0.0799561
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.659
+anchor_top = 0.554
+anchor_right = 0.75
+anchor_bottom = 0.676
+offset_left = -0.52002
+offset_top = 0.119995
+offset_right = -6.10352e-05
+offset_bottom = 0.279968
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.384
+anchor_top = 0.118
+anchor_right = 0.858
+anchor_bottom = 0.312
+offset_left = -0.52002
+offset_top = 0.0399933
+offset_right = -0.23999
+offset_bottom = 0.360001
+text = "Star Settlers"
+label_settings = SubResource("LabelSettings_wau6p")
+
+[connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

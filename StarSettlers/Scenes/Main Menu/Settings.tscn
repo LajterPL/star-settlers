@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://cegm080rsl3km"]
+
+[ext_resource type="Script" path="res://Scenes/Main Menu/Settings.gd" id="1_cw0lq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qvx4k"]
+font_size = 41
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Settings" type="CanvasLayer"]
+script = ExtResource("1_cw0lq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.016
+anchor_top = 0.875
+anchor_right = 0.984
+anchor_bottom = 0.972
+offset_left = -0.480001
+offset_top = -6.10352e-05
+offset_right = 0.47998
+offset_bottom = 0.159973
+theme_override_constants/separation = 350
+
+[node name="BackButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Back"
+
+[node name="CreditsButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Credits"
+
+[node name="ApplyButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Apply"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.016
+anchor_top = 0.028
+anchor_right = 0.984
+anchor_bottom = 0.847
+offset_left = -0.480001
+offset_top = -0.16
+offset_right = 0.47998
+offset_bottom = 0.159973
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Music"
+label_settings = SubResource("LabelSettings_qvx4k")
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+value = 50.0
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sound"
+label_settings = SubResource("LabelSettings_qvx4k")
+
+[node name="SoundSlider2" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+value = 75.0
+
+[connection signal="pressed" from="HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ApplyButton" to="." method="_on_apply_button_pressed"]
