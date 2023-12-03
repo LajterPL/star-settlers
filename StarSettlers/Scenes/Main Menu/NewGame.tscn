@@ -1,0 +1,105 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4i7roqw1qmga"]
+
+[ext_resource type="Texture2D" uid="uid://8u3k7hvbykry" path="res://icon.svg" id="1_winw1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gote7"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_0dems"]
+font_size = 24
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="TitleLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.4
+anchor_right = 0.6
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Choose Federation"
+label_settings = SubResource("LabelSettings_gote7")
+horizontal_alignment = 1
+
+[node name="FactionSelection" type="Control" parent="."]
+layout_mode = 3
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.9
+
+[node name="FactionLogo" type="TextureRect" parent="FactionSelection"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.6
+offset_right = 640.0
+offset_bottom = 128.0
+texture = ExtResource("1_winw1")
+stretch_mode = 5
+flip_h = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FactionSelection"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="BackButton" type="Button" parent="FactionSelection/HBoxContainer"]
+layout_mode = 2
+text = "<"
+
+[node name="FactionName" type="Label" parent="FactionSelection/HBoxContainer"]
+layout_mode = 2
+text = "FactionName"
+
+[node name="ForwardButton" type="Button" parent="FactionSelection/HBoxContainer"]
+layout_mode = 2
+text = ">"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.9
+horizontal_scroll_mode = 0
+
+[node name="FactionDetails" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="FactionName" type="Label" parent="ScrollContainer/FactionDetails"]
+layout_mode = 2
+text = "FactionName"
+label_settings = SubResource("LabelSettings_0dems")
+horizontal_alignment = 1
+
+[node name="FactionDescription" type="Label" parent="ScrollContainer/FactionDetails"]
+layout_mode = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit pellentesque habitant morbi tristique senectus et. Enim nunc faucibus a pellentesque sit. Sed id semper risus in. Dignissim enim sit amet venenatis urna cursus eget. Ultrices sagittis orci a scelerisque purus semper. Tempor id eu nisl nunc mi ipsum faucibus vitae. Nisi quis eleifend quam adipiscing. Euismod elementum nisi quis eleifend quam adipiscing vitae. Sit amet tellus cras adipiscing enim eu turpis egestas. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Hendrerit gravida rutrum quisque non tellus.
+
+Lobortis elementum nibh tellus molestie. In dictum non consectetur a erat. Ut porttitor leo a diam sollicitudin tempor id eu nisl. Placerat orci nulla pellentesque dignissim enim sit amet. Consectetur a erat nam at. Libero id faucibus nisl tincidunt eget nullam. Ut consequat semper viverra nam libero justo laoreet sit amet. Amet volutpat consequat mauris nunc congue. Velit ut tortor pretium viverra suspendisse potenti nullam ac. Auctor urna nunc id cursus. Commodo sed egestas egestas fringilla. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit pellentesque habitant morbi tristique senectus et. Enim nunc faucibus a pellentesque sit. Sed id semper risus in. Dignissim enim sit amet venenatis urna cursus eget. Ultrices sagittis orci a scelerisque purus semper. Tempor id eu nisl nunc mi ipsum faucibus vitae. Nisi quis eleifend quam adipiscing. Euismod elementum nisi quis eleifend quam adipiscing vitae. Sit amet tellus cras adipiscing enim eu turpis egestas. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Hendrerit gravida rutrum quisque non tellus.
+
+Lobortis elementum nibh tellus molestie. In dictum non consectetur a erat. Ut porttitor leo a diam sollicitudin tempor id eu nisl. Placerat orci nulla pellentesque dignissim enim sit amet. Consectetur a erat nam at. Libero id faucibus nisl tincidunt eget nullam. Ut consequat semper viverra nam libero justo laoreet sit amet. Amet volutpat consequat mauris nunc congue. Velit ut tortor pretium viverra suspendisse potenti nullam ac. Auctor urna nunc id cursus. Commodo sed egestas egestas fringilla. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc."
+autowrap_mode = 1
+tab_stops = PackedFloat32Array(0)
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_top = 0.92
+anchor_right = 0.3
+anchor_bottom = 1.0
+text = "Back"
+
+[node name="ConfirmButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.92
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Confirm
+"
