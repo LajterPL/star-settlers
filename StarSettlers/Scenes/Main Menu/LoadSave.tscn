@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://e3404l5ig66d"]
+[gd_scene load_steps=2 format=3 uid="uid://dhwisan7lckqt"]
+
+[ext_resource type="Script" path="res://Scenes/Main Menu/LoadSave.gd" id="1_rgjs5"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_rgjs5")
 
 [node name="ScrollSaves" type="ScrollContainer" parent="."]
 anchors_preset = -1
@@ -329,3 +332,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 text = "Load
 "
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="LoadButton" to="." method="_on_load_button_pressed"]

@@ -12,11 +12,11 @@ func _process(delta):
 
 
 func _on_new_game_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Main Menu/NewGame.tscn")
 
 
 func _on_continue_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Main Menu/LoadSave.tscn")
 
 
 func _on_settings_button_pressed():
