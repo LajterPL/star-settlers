@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcui4j1tn8idp"]
+[gd_scene load_steps=5 format=3 uid="uid://d4i7roqw1qmga"]
 
 [ext_resource type="Script" path="res://Scenes/Main Menu/NewGame.gd" id="1_ilmf5"]
 [ext_resource type="Texture2D" uid="uid://dswfsfnouq0m2" path="res://icon.svg" id="1_winw1"]
@@ -26,7 +26,7 @@ horizontal_alignment = 1
 layout_mode = 3
 anchor_top = 0.1
 anchor_right = 0.5
-anchor_bottom = 0.9
+anchor_bottom = 0.8
 
 [node name="FactionLogo" type="TextureRect" parent="FactionSelection"]
 layout_mode = 1
@@ -64,7 +64,7 @@ anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.1
 anchor_right = 1.0
-anchor_bottom = 0.9
+anchor_bottom = 0.8
 horizontal_scroll_mode = 0
 
 [node name="FactionDetails" type="VBoxContainer" parent="ScrollContainer"]
@@ -89,22 +89,30 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Lobortis elementum nibh tellus molestie. In dictum non consectetur a erat. Ut porttitor leo a diam sollicitudin tempor id eu nisl. Placerat orci nulla pellentesque dignissim enim sit amet. Consectetur a erat nam at. Libero id faucibus nisl tincidunt eget nullam. Ut consequat semper viverra nam libero justo laoreet sit amet. Amet volutpat consequat mauris nunc congue. Velit ut tortor pretium viverra suspendisse potenti nullam ac. Auctor urna nunc id cursus. Commodo sed egestas egestas fringilla. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc."
 autowrap_mode = 1
 tab_stops = PackedFloat32Array(0)
+metadata/_edit_lock_ = true
 
-[node name="BackButton" type="Button" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = -1
-anchor_top = 0.92
-anchor_right = 0.3
-anchor_bottom = 1.0
+anchor_left = 0.016
+anchor_top = 0.875
+anchor_right = 0.984
+anchor_bottom = 0.972
+offset_left = -0.480001
+offset_top = -6.10352e-05
+offset_right = 0.47998
+offset_bottom = 0.159973
+theme_override_constants/separation = 350
+
+[node name="BackButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Back"
 
-[node name="ConfirmButton" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = 0.7
-anchor_top = 0.92
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="ConfirmButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Confirm
 "
 
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]
