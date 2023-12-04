@@ -1,14 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhwisan7lckqt"]
+[gd_scene load_steps=2 format=3 uid="uid://e3404l5ig66d"]
 
 [ext_resource type="Script" path="res://Scenes/Main Menu/LoadSave.gd" id="1_rgjs5"]
 
-[node name="UI" type="CanvasLayer"]
+[node name="UI2" type="CanvasLayer"]
 script = ExtResource("1_rgjs5")
 
 [node name="ScrollSaves" type="ScrollContainer" parent="."]
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 0.9
+anchor_bottom = 0.8
+size_flags_horizontal = 3
+size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
 [node name="SavesList" type="VBoxContainer" parent="ScrollSaves"]
@@ -317,21 +319,28 @@ text = "Level: 1"
 layout_mode = 2
 text = "Time spent: 1h 0m"
 
-[node name="BackButton" type="Button" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = -1
-anchor_top = 0.92
-anchor_right = 0.3
-anchor_bottom = 1.0
+anchor_left = 0.016
+anchor_top = 0.875
+anchor_right = 0.984
+anchor_bottom = 0.972
+offset_left = -0.480001
+offset_top = -6.10352e-05
+offset_right = 0.47998
+offset_bottom = 0.159973
+theme_override_constants/separation = 350
+
+[node name="BackButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Back"
 
-[node name="LoadButton" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = 0.7
-anchor_top = 0.92
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="LoadButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Load
 "
 
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/LoadButton" to="." method="_on_load_button_pressed"]
