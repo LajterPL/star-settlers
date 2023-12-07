@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dnk37emhmbtxu"]
+[gd_scene load_steps=13 format=3 uid="uid://dnk37emhmbtxu"]
 
 [ext_resource type="Script" path="res://Scenes/Map/test_map.gd" id="1_2xld8"]
 [ext_resource type="Texture2D" uid="uid://ckf6iba8uvmgh" path="res://new_Sprites/tile_set_2.png" id="3_2y2cd"]
 [ext_resource type="Script" path="res://Scenes/Map/TileMap.gd" id="4_0nqvv"]
 [ext_resource type="Texture2D" uid="uid://dbud34oe8vw5e" path="res://new_Sprites/astronaut.png" id="5_dno5w"]
+[ext_resource type="Script" path="res://Scenes/Map/Path.gd" id="7_dqw77"]
 [ext_resource type="Script" path="res://Scenes/Map/player.gd" id="7_xrk6r"]
 [ext_resource type="Texture2D" uid="uid://cjvgac5ufcd7s" path="res://bg_Sprites/Nebula Aqua-Pink.png" id="9_7dlnp"]
 [ext_resource type="Texture2D" uid="uid://b4dpbnrl4ov60" path="res://bg_Sprites/Stars Small_1.png" id="9_ibknc"]
@@ -440,18 +441,20 @@ script = ExtResource("4_0nqvv")
 position = Vector2(629, 148)
 script = ExtResource("7_xrk6r")
 
-[node name="Hex-sliced132" type="Sprite2D" parent="Player"]
+[node name="PlayerSprite" type="Sprite2D" parent="Player"]
 modulate = Color(0.843137, 0.729412, 0.784314, 1)
 position = Vector2(-3, -17)
 scale = Vector2(0.041553, 0.041553)
 texture = ExtResource("5_dno5w")
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="PlayerCamera2D" type="Camera2D" parent="Player"]
 position = Vector2(-3, -17.1247)
 scale = Vector2(0.041553, 0.041553)
 
+[node name="Path" type="Node2D" parent="."]
+script = ExtResource("7_dqw77")
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
 
 [node name="gb_nebula" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.1, 0.1)

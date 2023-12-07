@@ -1,5 +1,5 @@
 extends TileMap
-
+@onready var player = $"../Player"
 var ground_layer = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -67,7 +67,14 @@ func reconstruct_path(came_from, current: Vector2i):
 		next = came_from.get(next)
 	path.reverse()
 	return path
-	
+
+func get_point_path(path: Array[Vector2i]):
+	var point_path: Array[Vector2] = []
+	point_path.append(player.global_position)
+	for vec in path:
+		point_path.append(map_to_local(vec))
+	return PackedVector2Array(point_path)
+
 func get_neighbors(current: Vector2i):
 	#nie wiem jak to zrobić inaczej ważne że działa ok?
 	var neighbors_positions = []
