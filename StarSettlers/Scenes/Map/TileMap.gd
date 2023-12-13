@@ -48,8 +48,8 @@ func a_star_path(start: Vector2i, target: Vector2i):
 			
 			
 func heuristic(start: Vector2i,target: Vector2i):
-	var distance = ((start.x-target.x)**2+(start.y-target.y)**2)**-2
-	return -distance	
+	var distance = sqrt((start.x-target.x)**2+(start.y-target.y)**2)
+	return distance
 	
 func get_lowest_f_score(open_set, f_score):
 	var lowest = open_set[0]

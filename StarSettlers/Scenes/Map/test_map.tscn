@@ -454,7 +454,7 @@ scale = Vector2(0.041553, 0.041553)
 [node name="Path" type="Node2D" parent="."]
 script = ExtResource("7_dqw77")
 metadata/show = true
-metadata/color = Color(0.14902, 0.631373, 0.364706, 0.607843)
+metadata/color = Color(0, 0.635294, 0.364706, 0.533333)
 metadata/width = 5.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
