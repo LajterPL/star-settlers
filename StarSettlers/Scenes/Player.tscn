@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcbiij8ca0j0x"]
+
+[ext_resource type="Script" path="res://Scenes/Player.gd" id="1_v3sts"]
+[ext_resource type="Texture2D" uid="uid://dbud34oe8vw5e" path="res://new_Sprites/astronaut.png" id="2_lxr28"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmhol"]
+size = Vector2(25, 45)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_v3sts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_vmhol")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+modulate = Color(0.843137, 0.729412, 0.784314, 1)
+position = Vector2(0, -10)
+scale = Vector2(0.041553, 0.041553)
+texture = ExtResource("2_lxr28")
+
+[node name="PlayerCamera2D" type="Camera2D" parent="."]
+scale = Vector2(0.041553, 0.041553)
+position_smoothing_enabled = true
