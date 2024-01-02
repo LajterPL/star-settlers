@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="StarSettlers"
-run/main_scene="res://Scenes/Main Menu/MainMenu.tscn"
+run/main_scene="res://Scenes/Map/test_map.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
@@ -39,6 +39,11 @@ scrollUp={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":8,"position":Vector2(153, 23),"global_position":Vector2(157, 66),"factor":1.45,"button_index":4,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=false
 
 [rendering]
 

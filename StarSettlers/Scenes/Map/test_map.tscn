@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=3 uid="uid://dnk37emhmbtxu"]
+[gd_scene load_steps=11 format=3 uid="uid://dnk37emhmbtxu"]
 
-[ext_resource type="Script" path="res://Scenes/Map/test_map.gd" id="1_2xld8"]
 [ext_resource type="Texture2D" uid="uid://ckf6iba8uvmgh" path="res://new_Sprites/tile_set_2.png" id="3_2y2cd"]
 [ext_resource type="Script" path="res://Scenes/Map/TileMap.gd" id="4_0nqvv"]
 [ext_resource type="Script" path="res://Scenes/Map/Path.gd" id="7_dqw77"]
@@ -411,7 +410,6 @@ sources/1 = SubResource("TileSetAtlasSource_0g0id")
 tile_proxies/coords_level = [[0, Vector2i(0, 0)], [15, Vector2i(0, 0)], [1, Vector2i(0, 0)], [15, Vector2i(1, 0)], [2, Vector2i(0, 0)], [15, Vector2i(2, 0)], [3, Vector2i(0, 0)], [15, Vector2i(3, 0)], [4, Vector2i(0, 0)], [15, Vector2i(4, 0)], [5, Vector2i(0, 0)], [15, Vector2i(5, 0)], [7, Vector2i(0, 0)], [14, Vector2i(0, 0)], [8, Vector2i(0, 0)], [14, Vector2i(1, 0)], [9, Vector2i(0, 0)], [14, Vector2i(2, 0)], [10, Vector2i(0, 0)], [13, Vector2i(0, 0)], [11, Vector2i(0, 0)], [13, Vector2i(1, 0)], [12, Vector2i(0, 0)], [13, Vector2i(2, 0)], [13, Vector2i(0, 0)], [15, Vector2i(6, 0)], [13, Vector2i(1, 0)], [15, Vector2i(7, 0)], [13, Vector2i(2, 0)], [15, Vector2i(8, 0)], [14, Vector2i(0, 0)], [15, Vector2i(9, 0)], [14, Vector2i(1, 0)], [15, Vector2i(10, 0)], [14, Vector2i(2, 0)], [15, Vector2i(11, 0)]]
 
 [node name="test_lvl" type="Node2D"]
-script = ExtResource("1_2xld8")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

@@ -77,11 +77,14 @@ func get_point_path(path: Array[Vector2i]):
 
 func get_neighbors(current: Vector2i):
 	#nie wiem jak to zrobić inaczej ważne że działa ok?
-	var neighbors_positions = []
-	neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_TOP_LEFT_SIDE))
-	neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_TOP_RIGHT_SIDE))
-	neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_BOTTOM_LEFT_SIDE))
-	neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_BOTTOM_RIGHT_SIDE))
-	neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_LEFT_SIDE))
-	neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_RIGHT_SIDE))		
+	#var neighbors_positions = []
+	#neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_TOP_LEFT_SIDE))
+	#neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_TOP_RIGHT_SIDE))
+	#neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_BOTTOM_LEFT_SIDE))
+	#neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_BOTTOM_RIGHT_SIDE))
+	#neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_LEFT_SIDE))
+	#neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_RIGHT_SIDE))		
+	var neighbors_positions = get_surrounding_cells(current)
+	
 	return neighbors_positions
+
