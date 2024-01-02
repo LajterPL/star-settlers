@@ -9,6 +9,8 @@ var is_moving: bool
 @onready var drag_timer = $dragTimer
 var click_position
 
+@onready var player_camera = $"../PlayerCamera"
+
 func _unhandled_input(event):
 	if event is InputEventScreenTouch:
 		if event.pressed:
@@ -18,7 +20,11 @@ func _unhandled_input(event):
 			if not drag_timer.is_stopped():
 				var distance_between = click_position - event.position
 				if distance_between < Vector2(5, 5) and distance_between > Vector2(-5, -5):
-					var touch_position = position - ((get_global_transform_with_canvas().origin - event.position) / $PlayerCamera2D.zoom.x)
+					# Sprawdzenie czy ma wrócić do gracza przy ruchu
+					if player_camera.move_to_player_on_movement:
+						player_camera.global_position = global_position
+					
+					var touch_position = position - ((get_global_transform_with_canvas().origin - event.position) / player_camera.zoom.x)
 					var tile_position = tile_map.local_to_map(touch_position)
 					var tile_data = tile_map.get_cell_tile_data(ground_layer,tile_position,false)
 					if tile_data != null and tile_data.get_custom_data("walkable"):
@@ -47,6 +53,10 @@ func _physics_process(_delta):
 		target_position = tile_map.map_to_local(current_path.front())
 		is_moving = true
 	
+	# Sprawdzenie czy kamera jest na graczu z możliwością niewielkiego błędu
+	var distance_between_camera_and_player = player_camera.global_position - global_position
+	if distance_between_camera_and_player < Vector2(5, 5) and distance_between_camera_and_player > Vector2(-5, -5):
+		player_camera.global_position = player_camera.global_position.move_toward(target_position, 1.75)
 	global_position = global_position.move_toward(target_position, 1.75)
 	
 	if global_position == target_position:

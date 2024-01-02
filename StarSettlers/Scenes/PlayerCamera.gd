@@ -5,8 +5,13 @@ extends Camera2D
 @export var zoom_speed = 0.04
 var zoom_sensitivity = 10
 
+@export var move_to_player_on_movement = false
+
 var events = {}
 var last_drag_distance = 0
+
+func _ready():
+	global_position = $"../Player".global_position
 
 func _unhandled_input(event):
 	if event is InputEventScreenTouch:
@@ -25,3 +30,15 @@ func _unhandled_input(event):
 				new_zoom = clamp(zoom.x * new_zoom, min_zoom, max_zoom)
 				zoom = Vector2.ONE * new_zoom
 				last_drag_distance = drag_distance
+		# Do usuniecia po implementacji GUI
+		elif events.size() == 3:
+			global_position = $"../Player".global_position
+	# Do usuniecia po implementacji GUI
+	if event.is_action("ui_select"):
+		global_position = $"../Player".global_position
+	# Zoom na scrollu
+	if event.is_action("scrollDown"):
+		zoom = Vector2.ONE * clamp(zoom.x * (1 - zoom_speed), min_zoom, max_zoom)
+	if event.is_action("scrollUp"):
+		zoom = Vector2.ONE * clamp(zoom.x * (1 + zoom_speed), min_zoom, max_zoom)
+		

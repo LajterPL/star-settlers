@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnk37emhmbtxu"]
+[gd_scene load_steps=12 format=3 uid="uid://dnk37emhmbtxu"]
 
 [ext_resource type="Texture2D" uid="uid://ckf6iba8uvmgh" path="res://new_Sprites/tile_set_2.png" id="3_2y2cd"]
 [ext_resource type="Script" path="res://Scenes/Map/TileMap.gd" id="4_0nqvv"]
 [ext_resource type="Script" path="res://Scenes/Map/Path.gd" id="7_dqw77"]
 [ext_resource type="PackedScene" uid="uid://bcbiij8ca0j0x" path="res://Scenes/Player.tscn" id="8_1biyw"]
+[ext_resource type="Script" path="res://Scenes/PlayerCamera.gd" id="8_d5qpy"]
 [ext_resource type="Texture2D" uid="uid://cjvgac5ufcd7s" path="res://bg_Sprites/Nebula Aqua-Pink.png" id="9_7dlnp"]
 [ext_resource type="Texture2D" uid="uid://b4dpbnrl4ov60" path="res://bg_Sprites/Stars Small_1.png" id="9_ibknc"]
 [ext_resource type="Texture2D" uid="uid://cy56q1ot867nh" path="res://new_Sprites/tile_set_1.png" id="28_f5a1g"]
@@ -469,3 +470,8 @@ metadata/width = 5.0
 
 [node name="Player" parent="." instance=ExtResource("8_1biyw")]
 position = Vector2(593, 162)
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+scale = Vector2(0.041553, 0.041553)
+position_smoothing_enabled = true
+script = ExtResource("8_d5qpy")
