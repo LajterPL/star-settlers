@@ -1,10 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bclwdogtywc0k"]
+[gd_scene load_steps=4 format=3 uid="uid://bclwdogtywc0k"]
 
 [ext_resource type="Script" path="res://Scenes/Main Menu/Credits.gd" id="1_ytin3"]
-[ext_resource type="Texture2D" uid="uid://dswfsfnouq0m2" path="res://icon.svg" id="2_jmyml"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_whv71"]
-size = Vector2(127.835, 127.515)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bku7n"]
+size = Vector2(144.505, 66.09)
 
 [sub_resource type="LabelSettings" id="LabelSettings_yy11l"]
 font_size = 40
@@ -27,11 +26,14 @@ offset_bottom = 0.159973
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="HBoxContainer"]
-position = Vector2(-0.999939, -1.99994)
-scale = Vector2(1.17188, 0.554688)
-texture_normal = ExtResource("2_jmyml")
-shape = SubResource("RectangleShape2D_whv71")
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Back"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="HBoxContainer/Button"]
+position = Vector2(73.0001, 34.0001)
+shape = SubResource("RectangleShape2D_bku7n")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = -1
@@ -52,4 +54,5 @@ label_settings = SubResource("LabelSettings_yy11l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="HBoxContainer/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_back_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button/TouchScreenButton" to="." method="_back_button_pressed"]
