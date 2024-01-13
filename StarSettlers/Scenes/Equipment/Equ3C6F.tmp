@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8c6hup4apt5q"]
+
+[ext_resource type="Texture2D" uid="uid://dswfsfnouq0m2" path="res://icon.svg" id="1_5lhrg"]
+[ext_resource type="Script" path="res://Scenes/Equipment/EquipmentTransferUI.gd" id="1_x0xps"]
+
+[node name="EquipmentTransferUI" type="CanvasLayer"]
+script = ExtResource("1_x0xps")
+
+[node name="LeftItemList" type="ItemList" parent="."]
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.4
+anchor_bottom = 0.9
+allow_reselect = true
+item_count = 3
+max_columns = 3
+same_column_width = true
+icon_mode = 0
+item_0/text = "Hej"
+item_0/icon = ExtResource("1_5lhrg")
+item_0/selectable = false
+item_1/text = "Haii"
+item_1/icon = ExtResource("1_5lhrg")
+item_1/selectable = false
+item_2/text = "Elo"
+item_2/icon = ExtResource("1_5lhrg")
+item_2/selectable = false
+
+[node name="RightItemList" type="ItemList" parent="."]
+anchors_preset = -1
+anchor_left = 0.6
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.9
+allow_reselect = true
+item_count = 3
+max_columns = 3
+same_column_width = true
+icon_mode = 0
+item_0/text = "Hej"
+item_0/icon = ExtResource("1_5lhrg")
+item_0/selectable = false
+item_1/text = "Haii"
+item_1/icon = ExtResource("1_5lhrg")
+item_1/selectable = false
+item_2/text = "Elo"
+item_2/icon = ExtResource("1_5lhrg")
+item_2/selectable = false
+
+[node name="DoubleClickTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="item_clicked" from="LeftItemList" to="." method="_on_left_item_list_item_clicked"]
+[connection signal="item_clicked" from="RightItemList" to="." method="_on_right_item_list_item_clicked"]
