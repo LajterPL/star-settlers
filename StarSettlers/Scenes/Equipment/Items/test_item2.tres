@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bxue13nkwtwb4"]
+
+[ext_resource type="Script" path="res://Scenes/Equipment/ItemTemplate.gd" id="1_h7p26"]
+
+[resource]
+script = ExtResource("1_h7p26")
+name = &""
+description = ""
