@@ -43,7 +43,6 @@ func _unhandled_input(event):
 						if path.is_empty() == false:
 							current_path = path
 							current_point_path = tile_map.get_point_path(path)
-		
 				
 func _physics_process(_delta):
 	if current_path.is_empty():
@@ -54,9 +53,9 @@ func _physics_process(_delta):
 		is_moving = true
 	
 	# Sprawdzenie czy kamera jest na graczu z możliwością niewielkiego błędu
-	var distance_between_camera_and_player = player_camera.global_position - global_position
-	if distance_between_camera_and_player < Vector2(5, 5) and distance_between_camera_and_player > Vector2(-5, -5):
-		player_camera.global_position = player_camera.global_position.move_toward(target_position, 1.75)
+	var distance_between_camera_and_player = player_camera.global_position.distance_squared_to(global_position)
+	if distance_between_camera_and_player < 500:
+		player_camera.global_position = global_position
 	global_position = global_position.move_toward(target_position, 1.75)
 	
 	if global_position == target_position:

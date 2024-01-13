@@ -26,7 +26,7 @@ func _unhandled_input(event):
 		elif events.size() == 2:
 			var drag_distance = events[0].position.distance_to(events[1].position)
 			if abs(drag_distance - last_drag_distance) > zoom_sensitivity:
-				var new_zoom = (1 + zoom_speed) if drag_distance < last_drag_distance else (1 - zoom_speed)
+				var new_zoom = (1 - zoom_speed) if drag_distance < last_drag_distance else (1 + zoom_speed)
 				new_zoom = clamp(zoom.x * new_zoom, min_zoom, max_zoom)
 				zoom = Vector2.ONE * new_zoom
 				last_drag_distance = drag_distance
