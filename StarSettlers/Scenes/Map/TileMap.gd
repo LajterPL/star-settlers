@@ -2,14 +2,6 @@ extends TileMap
 @onready var player = $"../Player"
 var ground_layer = 0
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
 
 func a_star_path(start: Vector2i, target: Vector2i):
 	var open_set = []
@@ -30,7 +22,8 @@ func a_star_path(start: Vector2i, target: Vector2i):
 		open_set.erase(current)
 		closed_set.append(current)
 		
-		for neighbor in get_neighbors(current):
+		var neighbors_positions = get_surrounding_cells(current)
+		for neighbor in neighbors_positions:
 			var tile_data = get_cell_tile_data(ground_layer,neighbor,false)
 			if tile_data != null:
 				if  closed_set.find(neighbor) != -1 or !tile_data.get_custom_data("walkable"):
@@ -74,14 +67,3 @@ func get_point_path(path: Array[Vector2i]):
 	for vec in path:
 		point_path.append(map_to_local(vec))
 	return PackedVector2Array(point_path)
-
-func get_neighbors(current: Vector2i):
-	#nie wiem jak to zrobić inaczej ważne że działa ok?
-	var neighbors_positions = []
-	neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_TOP_LEFT_SIDE))
-	neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_TOP_RIGHT_SIDE))
-	neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_BOTTOM_LEFT_SIDE))
-	neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_BOTTOM_RIGHT_SIDE))
-	neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_LEFT_SIDE))
-	neighbors_positions.append(get_neighbor_cell(current,TileSet.CELL_NEIGHBOR_RIGHT_SIDE))		
-	return neighbors_positions
