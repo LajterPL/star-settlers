@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dnk37emhmbtxu"]
+[gd_scene load_steps=16 format=3 uid="uid://dnk37emhmbtxu"]
 
 [ext_resource type="Texture2D" uid="uid://ckf6iba8uvmgh" path="res://new_Sprites/tile_set_2.png" id="3_2y2cd"]
 [ext_resource type="Script" path="res://Scenes/Map/TileMap.gd" id="4_0nqvv"]
 [ext_resource type="Texture2D" uid="uid://bs4tak663xmxv" path="res://new_Sprites/tile_set.png" id="5_7cjnc"]
+[ext_resource type="Texture2D" uid="uid://mv3cujglh82x" path="res://new_Sprites/tile_set_3.png" id="6_grfbt"]
 [ext_resource type="Script" path="res://Scenes/Map/Path.gd" id="7_dqw77"]
 [ext_resource type="PackedScene" uid="uid://bcbiij8ca0j0x" path="res://Scenes/Player.tscn" id="8_1biyw"]
 [ext_resource type="Script" path="res://Scenes/PlayerCamera.gd" id="8_d5qpy"]
@@ -442,6 +443,65 @@ texture_region_size = Vector2i(66, 62)
 3:2/0/custom_data_1 = true
 4:2/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_505fv"]
+texture = ExtResource("6_grfbt")
+margins = Vector2i(0, 28)
+texture_region_size = Vector2i(66, 62)
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+1:0/0 = 0
+1:0/0/custom_data_0 = true
+2:0/0 = 0
+2:0/0/custom_data_0 = true
+3:0/0 = 0
+3:0/0/custom_data_0 = true
+0:1/0 = 0
+0:1/0/custom_data_0 = true
+1:1/0 = 0
+1:1/0/custom_data_0 = true
+2:1/0 = 0
+2:1/0/custom_data_0 = true
+3:1/0 = 0
+3:1/0/custom_data_0 = true
+0:2/0 = 0
+0:2/0/custom_data_0 = true
+1:2/0 = 0
+1:2/0/custom_data_0 = true
+2:2/0 = 0
+2:2/0/custom_data_0 = true
+3:2/0 = 0
+3:2/0/custom_data_0 = true
+0:3/0 = 0
+0:3/0/custom_data_0 = true
+1:3/0 = 0
+1:3/0/custom_data_0 = true
+2:3/0 = 0
+2:3/0/custom_data_0 = true
+3:3/0 = 0
+3:3/0/custom_data_0 = true
+0:4/0 = 0
+0:4/0/custom_data_0 = true
+1:4/0 = 0
+1:4/0/custom_data_0 = true
+2:4/0 = 0
+2:4/0/custom_data_0 = true
+3:4/0 = 0
+3:4/0/custom_data_0 = true
+0:5/0 = 0
+0:5/0/custom_data_0 = true
+1:5/0 = 0
+1:5/0/custom_data_0 = true
+2:5/0 = 0
+2:5/0/custom_data_0 = true
+3:5/0 = 0
+3:5/0/custom_data_0 = true
+4:0/0 = 0
+4:1/0 = 0
+4:2/0 = 0
+4:3/0 = 0
+4:4/0 = 0
+4:5/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_ayu30"]
 tile_shape = 3
 tile_size = Vector2i(66, 43)
@@ -457,6 +517,7 @@ custom_data_layer_2/type = 3
 sources/0 = SubResource("TileSetAtlasSource_2j4xd")
 sources/1 = SubResource("TileSetAtlasSource_0g0id")
 sources/2 = SubResource("TileSetAtlasSource_lmsrm")
+sources/3 = SubResource("TileSetAtlasSource_505fv")
 tile_proxies/coords_level = [[0, Vector2i(0, 0)], [15, Vector2i(0, 0)], [1, Vector2i(0, 0)], [15, Vector2i(1, 0)], [2, Vector2i(0, 0)], [15, Vector2i(2, 0)], [3, Vector2i(0, 0)], [15, Vector2i(3, 0)], [4, Vector2i(0, 0)], [15, Vector2i(4, 0)], [5, Vector2i(0, 0)], [15, Vector2i(5, 0)], [7, Vector2i(0, 0)], [14, Vector2i(0, 0)], [8, Vector2i(0, 0)], [14, Vector2i(1, 0)], [9, Vector2i(0, 0)], [14, Vector2i(2, 0)], [10, Vector2i(0, 0)], [13, Vector2i(0, 0)], [11, Vector2i(0, 0)], [13, Vector2i(1, 0)], [12, Vector2i(0, 0)], [13, Vector2i(2, 0)], [13, Vector2i(0, 0)], [15, Vector2i(6, 0)], [13, Vector2i(1, 0)], [15, Vector2i(7, 0)], [13, Vector2i(2, 0)], [15, Vector2i(8, 0)], [14, Vector2i(0, 0)], [15, Vector2i(9, 0)], [14, Vector2i(1, 0)], [15, Vector2i(10, 0)], [14, Vector2i(2, 0)], [15, Vector2i(11, 0)]]
 
 [node name="test_lvl" type="Node2D"]
