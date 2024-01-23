@@ -1,0 +1,679 @@
+[gd_scene load_steps=4 format=3 uid="uid://xmm8wr0bh6bl"]
+
+[ext_resource type="Texture2D" uid="uid://dswfsfnouq0m2" path="res://icon.svg" id="1_fskvj"]
+[ext_resource type="Script" path="res://Scenes/Base Menu/BaseOverview.gd" id="1_yjl12"]
+[ext_resource type="Texture2D" uid="uid://em6ii00gwqrw" path="res://Scenes/Base Menu/research_progress_bar.png" id="2_shrxk"]
+
+[node name="BaseOverview" type="CanvasLayer"]
+script = ExtResource("1_yjl12")
+
+[node name="TabBox" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_top = 0.935
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Overview" type="Button" parent="TabBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Overview"
+
+[node name="Storage" type="Button" parent="TabBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Storage"
+
+[node name="Research" type="Button" parent="TabBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Research"
+
+[node name="Communication" type="Button" parent="TabBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Communication"
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.935
+offset_bottom = -0.200073
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OverviewPanel" type="Control" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProductionPanel" type="VBoxContainer" parent="Panel/OverviewPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+alignment = 1
+
+[node name="PanelTitle" type="Label" parent="Panel/OverviewPanel/ProductionPanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Production"
+
+[node name="ResourcesPanel" type="HBoxContainer" parent="Panel/OverviewPanel/ProductionPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="ResourceIndicator" type="VBoxContainer" parent="Panel/OverviewPanel/ProductionPanel/ResourcesPanel"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Panel/OverviewPanel/ProductionPanel/ResourcesPanel/ResourceIndicator"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+
+[node name="ResourceCount" type="Label" parent="Panel/OverviewPanel/ProductionPanel/ResourcesPanel/ResourceIndicator"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="ResourceIndicator2" type="VBoxContainer" parent="Panel/OverviewPanel/ProductionPanel/ResourcesPanel"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Panel/OverviewPanel/ProductionPanel/ResourcesPanel/ResourceIndicator2"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+
+[node name="ResourceCount" type="Label" parent="Panel/OverviewPanel/ProductionPanel/ResourcesPanel/ResourceIndicator2"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="ResourceIndicator3" type="VBoxContainer" parent="Panel/OverviewPanel/ProductionPanel/ResourcesPanel"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Panel/OverviewPanel/ProductionPanel/ResourcesPanel/ResourceIndicator3"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+
+[node name="ResourceCount" type="Label" parent="Panel/OverviewPanel/ProductionPanel/ResourcesPanel/ResourceIndicator3"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="ResourceIndicator4" type="VBoxContainer" parent="Panel/OverviewPanel/ProductionPanel/ResourcesPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Panel/OverviewPanel/ProductionPanel/ResourcesPanel/ResourceIndicator4"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+
+[node name="ResourceCount" type="Label" parent="Panel/OverviewPanel/ProductionPanel/ResourcesPanel/ResourceIndicator4"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="StoragePanel" type="VBoxContainer" parent="Panel/OverviewPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="PanelTitle" type="Label" parent="Panel/OverviewPanel/StoragePanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Storage"
+
+[node name="ResourcesPanel" type="HBoxContainer" parent="Panel/OverviewPanel/StoragePanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="ResourceIndicator" type="VBoxContainer" parent="Panel/OverviewPanel/StoragePanel/ResourcesPanel"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Panel/OverviewPanel/StoragePanel/ResourcesPanel/ResourceIndicator"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+
+[node name="ResourceCount" type="Label" parent="Panel/OverviewPanel/StoragePanel/ResourcesPanel/ResourceIndicator"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="ResourceIndicator2" type="VBoxContainer" parent="Panel/OverviewPanel/StoragePanel/ResourcesPanel"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Panel/OverviewPanel/StoragePanel/ResourcesPanel/ResourceIndicator2"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+
+[node name="ResourceCount" type="Label" parent="Panel/OverviewPanel/StoragePanel/ResourcesPanel/ResourceIndicator2"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="ResourceIndicator3" type="VBoxContainer" parent="Panel/OverviewPanel/StoragePanel/ResourcesPanel"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Panel/OverviewPanel/StoragePanel/ResourcesPanel/ResourceIndicator3"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+
+[node name="ResourceCount" type="Label" parent="Panel/OverviewPanel/StoragePanel/ResourcesPanel/ResourceIndicator3"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="ResourceIndicator4" type="VBoxContainer" parent="Panel/OverviewPanel/StoragePanel/ResourcesPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Panel/OverviewPanel/StoragePanel/ResourcesPanel/ResourceIndicator4"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+
+[node name="ResourceCount" type="Label" parent="Panel/OverviewPanel/StoragePanel/ResourcesPanel/ResourceIndicator4"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="ConsumptionPanel" type="VBoxContainer" parent="Panel/OverviewPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+alignment = 1
+
+[node name="PanelTitle" type="Label" parent="Panel/OverviewPanel/ConsumptionPanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Consumption"
+
+[node name="ResourcesPanel" type="HBoxContainer" parent="Panel/OverviewPanel/ConsumptionPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="ResourceIndicator" type="VBoxContainer" parent="Panel/OverviewPanel/ConsumptionPanel/ResourcesPanel"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Panel/OverviewPanel/ConsumptionPanel/ResourcesPanel/ResourceIndicator"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+
+[node name="ResourceCount" type="Label" parent="Panel/OverviewPanel/ConsumptionPanel/ResourcesPanel/ResourceIndicator"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="ResourceIndicator2" type="VBoxContainer" parent="Panel/OverviewPanel/ConsumptionPanel/ResourcesPanel"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Panel/OverviewPanel/ConsumptionPanel/ResourcesPanel/ResourceIndicator2"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+
+[node name="ResourceCount" type="Label" parent="Panel/OverviewPanel/ConsumptionPanel/ResourcesPanel/ResourceIndicator2"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="ResourceIndicator3" type="VBoxContainer" parent="Panel/OverviewPanel/ConsumptionPanel/ResourcesPanel"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Panel/OverviewPanel/ConsumptionPanel/ResourcesPanel/ResourceIndicator3"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+
+[node name="ResourceCount" type="Label" parent="Panel/OverviewPanel/ConsumptionPanel/ResourcesPanel/ResourceIndicator3"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="ResourceIndicator4" type="VBoxContainer" parent="Panel/OverviewPanel/ConsumptionPanel/ResourcesPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Panel/OverviewPanel/ConsumptionPanel/ResourcesPanel/ResourceIndicator4"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+
+[node name="ResourceCount" type="Label" parent="Panel/OverviewPanel/ConsumptionPanel/ResourcesPanel/ResourceIndicator4"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="StoragePanel" type="Control" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BasePanel" type="HBoxContainer" parent="Panel/StoragePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.45
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="BaseEq" type="ItemList" parent="Panel/StoragePanel/BasePanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 3
+max_columns = 3
+same_column_width = true
+icon_mode = 0
+item_0/text = "Test"
+item_0/icon = ExtResource("1_fskvj")
+item_1/text = "Test"
+item_1/icon = ExtResource("1_fskvj")
+item_2/text = "Test"
+item_2/icon = ExtResource("1_fskvj")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Panel/StoragePanel/BasePanel"]
+layout_mode = 2
+
+[node name="BaseIcon" type="TextureRect" parent="Panel/StoragePanel/BasePanel/AspectRatioContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("1_fskvj")
+
+[node name="PlayerPanel" type="HBoxContainer" parent="Panel/StoragePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.55
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Panel/StoragePanel/PlayerPanel"]
+layout_mode = 2
+
+[node name="PlayerIcon" type="TextureRect" parent="Panel/StoragePanel/PlayerPanel/AspectRatioContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("1_fskvj")
+
+[node name="PlayerEq" type="ItemList" parent="Panel/StoragePanel/PlayerPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 1
+max_columns = 3
+same_column_width = true
+icon_mode = 0
+item_0/text = ""
+
+[node name="ResearchPanel" type="Control" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="VBoxContainer" parent="Panel/ResearchPanel"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 20.0
+offset_right = -50.0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="SamplesPanel" type="VBoxContainer" parent="Panel/ResearchPanel/Left"]
+layout_mode = 2
+alignment = 1
+
+[node name="PanelTitle" type="Label" parent="Panel/ResearchPanel/Left/SamplesPanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Samples"
+
+[node name="ItemSamplePanel" type="HBoxContainer" parent="Panel/ResearchPanel/Left/SamplesPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="SampleIndicator2" type="VBoxContainer" parent="Panel/ResearchPanel/Left/SamplesPanel/ItemSamplePanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Icon" type="TextureRect" parent="Panel/ResearchPanel/Left/SamplesPanel/ItemSamplePanel/SampleIndicator2"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+expand_mode = 4
+
+[node name="SampleLabel" type="Label" parent="Panel/ResearchPanel/Left/SamplesPanel/ItemSamplePanel/SampleIndicator2"]
+layout_mode = 2
+text = "Sample 1
+"
+horizontal_alignment = 1
+
+[node name="SampleIndicator3" type="VBoxContainer" parent="Panel/ResearchPanel/Left/SamplesPanel/ItemSamplePanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Icon" type="TextureRect" parent="Panel/ResearchPanel/Left/SamplesPanel/ItemSamplePanel/SampleIndicator3"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+expand_mode = 4
+
+[node name="SampleLabel" type="Label" parent="Panel/ResearchPanel/Left/SamplesPanel/ItemSamplePanel/SampleIndicator3"]
+layout_mode = 2
+text = "Sample 1
+"
+horizontal_alignment = 1
+
+[node name="SampleIndicator4" type="VBoxContainer" parent="Panel/ResearchPanel/Left/SamplesPanel/ItemSamplePanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Icon" type="TextureRect" parent="Panel/ResearchPanel/Left/SamplesPanel/ItemSamplePanel/SampleIndicator4"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+expand_mode = 4
+
+[node name="SampleLabel" type="Label" parent="Panel/ResearchPanel/Left/SamplesPanel/ItemSamplePanel/SampleIndicator4"]
+layout_mode = 2
+text = "Sample 1
+"
+horizontal_alignment = 1
+
+[node name="SampleIndicator5" type="VBoxContainer" parent="Panel/ResearchPanel/Left/SamplesPanel/ItemSamplePanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Icon" type="TextureRect" parent="Panel/ResearchPanel/Left/SamplesPanel/ItemSamplePanel/SampleIndicator5"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+expand_mode = 4
+
+[node name="SampleLabel" type="Label" parent="Panel/ResearchPanel/Left/SamplesPanel/ItemSamplePanel/SampleIndicator5"]
+layout_mode = 2
+text = "Sample 1
+"
+horizontal_alignment = 1
+
+[node name="SampleIndicator6" type="VBoxContainer" parent="Panel/ResearchPanel/Left/SamplesPanel/ItemSamplePanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Icon" type="TextureRect" parent="Panel/ResearchPanel/Left/SamplesPanel/ItemSamplePanel/SampleIndicator6"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+expand_mode = 4
+
+[node name="SampleLabel" type="Label" parent="Panel/ResearchPanel/Left/SamplesPanel/ItemSamplePanel/SampleIndicator6"]
+layout_mode = 2
+text = "Sample 1
+"
+horizontal_alignment = 1
+
+[node name="ResearchStatsPanel" type="VBoxContainer" parent="Panel/ResearchPanel/Left"]
+layout_mode = 2
+
+[node name="EffectLabel" type="HBoxContainer" parent="Panel/ResearchPanel/Left/ResearchStatsPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="Type" type="Label" parent="Panel/ResearchPanel/Left/ResearchStatsPanel/EffectLabel"]
+layout_mode = 2
+text = "Base research speed:"
+
+[node name="Value" type="Label" parent="Panel/ResearchPanel/Left/ResearchStatsPanel/EffectLabel"]
+layout_mode = 2
+text = "75%"
+
+[node name="EffectLabel2" type="HBoxContainer" parent="Panel/ResearchPanel/Left/ResearchStatsPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="Type" type="Label" parent="Panel/ResearchPanel/Left/ResearchStatsPanel/EffectLabel2"]
+layout_mode = 2
+text = "Biology bonus:"
+
+[node name="Value" type="Label" parent="Panel/ResearchPanel/Left/ResearchStatsPanel/EffectLabel2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.239216, 1, 0.239216, 1)
+text = "125%
+"
+
+[node name="EffectLabel3" type="HBoxContainer" parent="Panel/ResearchPanel/Left/ResearchStatsPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="Type" type="Label" parent="Panel/ResearchPanel/Left/ResearchStatsPanel/EffectLabel3"]
+layout_mode = 2
+text = "Chemistry bonus:"
+
+[node name="Value" type="Label" parent="Panel/ResearchPanel/Left/ResearchStatsPanel/EffectLabel3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.219608, 0.219608, 1)
+text = "50%"
+
+[node name="EffectLabel4" type="HBoxContainer" parent="Panel/ResearchPanel/Left/ResearchStatsPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="Type" type="Label" parent="Panel/ResearchPanel/Left/ResearchStatsPanel/EffectLabel4"]
+layout_mode = 2
+text = "Physics bonus:"
+
+[node name="Value" type="Label" parent="Panel/ResearchPanel/Left/ResearchStatsPanel/EffectLabel4"]
+layout_mode = 2
+text = "100%"
+
+[node name="Right" type="VBoxContainer" parent="Panel/ResearchPanel"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 20.0
+offset_right = -50.0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="CurrentResearch" type="VBoxContainer" parent="Panel/ResearchPanel/Right"]
+layout_mode = 2
+
+[node name="CurrentResearchProgress" type="TextureProgressBar" parent="Panel/ResearchPanel/Right/CurrentResearch"]
+texture_filter = 2
+texture_repeat = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+value = 25.0
+fill_mode = 4
+texture_under = ExtResource("2_shrxk")
+texture_progress = ExtResource("2_shrxk")
+tint_progress = Color(0.0313726, 1, 0.0784314, 1)
+
+[node name="Label" type="Label" parent="Panel/ResearchPanel/Right/CurrentResearch"]
+layout_mode = 2
+text = "Hydroponics"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Panel/ResearchPanel/Right"]
+layout_mode = 2
+text = "+20% Food Production
+Buildings Unlocked: Farm"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Panel/ResearchPanel/Right"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Research Tree"
+
+[node name="CommsPanel" type="Control" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="VBoxContainer" parent="Panel/CommsPanel"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.25
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 20.0
+offset_right = -50.0
+theme_override_constants/separation = 25
+
+[node name="Title" type="Label" parent="Panel/CommsPanel/Left"]
+layout_mode = 2
+text = "Contacts"
+horizontal_alignment = 1
+
+[node name="ContactsList" type="VBoxContainer" parent="Panel/CommsPanel/Left"]
+layout_mode = 2
+
+[node name="ContactName" type="Button" parent="Panel/CommsPanel/Left/ContactsList"]
+layout_mode = 2
+text = "Contatct Name"
+
+[node name="ContactName2" type="Button" parent="Panel/CommsPanel/Left/ContactsList"]
+layout_mode = 2
+text = "Contatct Name"
+
+[node name="ContactName3" type="Button" parent="Panel/CommsPanel/Left/ContactsList"]
+layout_mode = 2
+text = "Contatct Name"
+
+[node name="Center" type="VBoxContainer" parent="Panel/CommsPanel"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 20.0
+
+[node name="ContactImage" type="TextureRect" parent="Panel/CommsPanel/Center"]
+layout_mode = 2
+texture = ExtResource("1_fskvj")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ContactName" type="Label" parent="Panel/CommsPanel/Center"]
+layout_mode = 2
+text = "Contact Name"
+horizontal_alignment = 1
+
+[node name="FactionLabel" type="HBoxContainer" parent="Panel/CommsPanel/Center"]
+layout_mode = 2
+alignment = 1
+
+[node name="Type" type="Label" parent="Panel/CommsPanel/Center/FactionLabel"]
+layout_mode = 2
+text = "Faction:"
+
+[node name="Value" type="Label" parent="Panel/CommsPanel/Center/FactionLabel"]
+layout_mode = 2
+text = "FactionName"
+
+[node name="ReputationLabel" type="HBoxContainer" parent="Panel/CommsPanel/Center"]
+layout_mode = 2
+alignment = 1
+
+[node name="Type" type="Label" parent="Panel/CommsPanel/Center/ReputationLabel"]
+layout_mode = 2
+text = "Reputation:"
+
+[node name="Value" type="Label" parent="Panel/CommsPanel/Center/ReputationLabel"]
+layout_mode = 2
+text = "Neutral"
+
+[node name="Right" type="VBoxContainer" parent="Panel/CommsPanel"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 20.0
+offset_right = -50.0
+alignment = 1
+
+[node name="DialogContainer" type="ScrollContainer" parent="Panel/CommsPanel/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/CommsPanel/Right/DialogContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+
+[node name="Dialog" type="RichTextLabel" parent="Panel/CommsPanel/Right/DialogContainer/VBoxContainer"]
+layout_mode = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper faucibus diam, sed efficitur justo euismod vitae. Sed molestie dolor id tincidunt finibus. Nullam imperdiet massa purus, in eleifend eros dignissim a. In libero lacus, pulvinar vitae felis eget, cursus lacinia lacus. Nunc egestas eros lectus, nec vestibulum quam eleifend sed. Curabitur dapibus, urna sed sodales tempor, lectus magna rhoncus erat, sit amet fermentum enim ipsum eget augue. Fusce ipsum velit, bibendum id elementum non, consequat eget lorem. Nullam et ligula mollis, rhoncus nulla at, varius erat. Cras hendrerit turpis eget lacinia gravida. Nulla pulvinar erat sed eleifend dignissim. "
+fit_content = true
+scroll_active = false
+
+[node name="Dialog2" type="RichTextLabel" parent="Panel/CommsPanel/Right/DialogContainer/VBoxContainer"]
+layout_mode = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper faucibus diam, sed efficitur justo euismod vitae. Sed molestie dolor id tincidunt finibus. Nullam imperdiet massa purus, in eleifend eros dignissim a. In libero lacus, pulvinar vitae felis eget, cursus lacinia lacus. Nunc egestas eros lectus, nec vestibulum quam eleifend sed. Curabitur dapibus, urna sed sodales tempor, lectus magna rhoncus erat, sit amet fermentum enim ipsum eget augue. Fusce ipsum velit, bibendum id elementum non, consequat eget lorem. Nullam et ligula mollis, rhoncus nulla at, varius erat. Cras hendrerit turpis eget lacinia gravida. Nulla pulvinar erat sed eleifend dignissim. "
+fit_content = true
+scroll_active = false
+
+[node name="Dialog3" type="RichTextLabel" parent="Panel/CommsPanel/Right/DialogContainer/VBoxContainer"]
+layout_mode = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper faucibus diam, sed efficitur justo euismod vitae. Sed molestie dolor id tincidunt finibus. Nullam imperdiet massa purus, in eleifend eros dignissim a. In libero lacus, pulvinar vitae felis eget, cursus lacinia lacus. Nunc egestas eros lectus, nec vestibulum quam eleifend sed. Curabitur dapibus, urna sed sodales tempor, lectus magna rhoncus erat, sit amet fermentum enim ipsum eget augue. Fusce ipsum velit, bibendum id elementum non, consequat eget lorem. Nullam et ligula mollis, rhoncus nulla at, varius erat. Cras hendrerit turpis eget lacinia gravida. Nulla pulvinar erat sed eleifend dignissim. "
+fit_content = true
+scroll_active = false
+
+[node name="DialogOptions" type="VBoxContainer" parent="Panel/CommsPanel/Right"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="OptionButton" type="Button" parent="Panel/CommsPanel/Right/DialogOptions"]
+layout_mode = 2
+text = "Option 1"
+
+[node name="OptionButton2" type="Button" parent="Panel/CommsPanel/Right/DialogOptions"]
+layout_mode = 2
+text = "Option 2
+"
+
+[node name="OptionButton3" type="Button" parent="Panel/CommsPanel/Right/DialogOptions"]
+layout_mode = 2
+text = "Option 3"
+
+[node name="OptionButton4" type="Button" parent="Panel/CommsPanel/Right/DialogOptions"]
+layout_mode = 2
+text = "Option 4"
+
+[node name="DoubleClickTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="pressed" from="TabBox/Overview" to="." method="_on_overview_pressed"]
+[connection signal="pressed" from="TabBox/Storage" to="." method="_on_storage_pressed"]
+[connection signal="pressed" from="TabBox/Research" to="." method="_on_research_pressed"]
+[connection signal="pressed" from="TabBox/Communication" to="." method="_on_communication_pressed"]
+[connection signal="item_clicked" from="Panel/StoragePanel/BasePanel/BaseEq" to="." method="_on_base_eq_item_clicked"]
+[connection signal="item_clicked" from="Panel/StoragePanel/PlayerPanel/PlayerEq" to="." method="_on_player_eq_item_clicked"]
