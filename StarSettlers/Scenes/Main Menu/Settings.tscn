@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cegm080rsl3km"]
+[gd_scene load_steps=4 format=3 uid="uid://cegm080rsl3km"]
 
 [ext_resource type="Script" path="res://Scenes/Main Menu/Settings.gd" id="1_cw0lq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r38sn"]
+size = Vector2(180, 70)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qvx4k"]
 font_size = 41
@@ -27,15 +30,27 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Back"
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="HBoxContainer/BackButton"]
+position = Vector2(88, 35.0001)
+shape = SubResource("RectangleShape2D_r38sn")
+
 [node name="CreditsButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Credits"
 
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="HBoxContainer/CreditsButton"]
+position = Vector2(88, 35.0001)
+shape = SubResource("RectangleShape2D_r38sn")
+
 [node name="ApplyButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Apply"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="HBoxContainer/ApplyButton"]
+position = Vector2(91, 35.0001)
+shape = SubResource("RectangleShape2D_r38sn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = -1
@@ -68,6 +83,5 @@ label_settings = SubResource("LabelSettings_qvx4k")
 layout_mode = 2
 value = 75.0
 
-[connection signal="pressed" from="HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/ApplyButton" to="." method="_on_apply_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/BackButton/TouchScreenButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/CreditsButton/TouchScreenButton2" to="." method="_on_credits_button_pressed"]

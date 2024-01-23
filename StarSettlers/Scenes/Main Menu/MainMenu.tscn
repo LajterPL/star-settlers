@@ -1,6 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvhsnl78x344t"]
+[gd_scene load_steps=7 format=3 uid="uid://cvhsnl78x344t"]
 
 [ext_resource type="Script" path="res://Scenes/Main Menu/MainMenu.gd" id="1_4idhe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eaacb"]
+size = Vector2(107, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffhp2"]
+size = Vector2(161, 119)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kspfk"]
+size = Vector2(161, 119)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt3k4"]
+size = Vector2(117, 88)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wau6p"]
 font_size = 100
@@ -22,6 +34,10 @@ offset_right = -0.200012
 offset_bottom = -0.280029
 text = "New Game"
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="NewGameButton"]
+position = Vector2(54, 44)
+shape = SubResource("RectangleShape2D_eaacb")
+
 [node name="ContinueButton" type="Button" parent="."]
 anchors_preset = -1
 anchor_left = 0.187
@@ -35,6 +51,10 @@ offset_bottom = 0.279968
 grow_horizontal = 2
 grow_vertical = 2
 text = "Continue"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ContinueButton"]
+position = Vector2(82, 58)
+shape = SubResource("RectangleShape2D_ffhp2")
 
 [node name="SettingsButton" type="Button" parent="."]
 anchors_preset = -1
@@ -50,6 +70,10 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Settings"
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="SettingsButton"]
+position = Vector2(81.0001, 58)
+shape = SubResource("RectangleShape2D_kspfk")
+
 [node name="ExitButton" type="Button" parent="."]
 anchors_preset = -1
 anchor_left = 0.659
@@ -64,6 +88,10 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Exit"
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ExitButton"]
+position = Vector2(59.0001, 45)
+shape = SubResource("RectangleShape2D_gt3k4")
+
 [node name="Label" type="Label" parent="."]
 anchors_preset = -1
 anchor_left = 0.384
@@ -77,7 +105,7 @@ offset_bottom = 0.360001
 text = "Star Settlers"
 label_settings = SubResource("LabelSettings_wau6p")
 
-[connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]
-[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="NewGameButton/TouchScreenButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="ContinueButton/TouchScreenButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="SettingsButton/TouchScreenButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="ExitButton/TouchScreenButton" to="." method="_on_exit_button_pressed"]

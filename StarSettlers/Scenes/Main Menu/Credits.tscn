@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bclwdogtywc0k"]
+[gd_scene load_steps=4 format=3 uid="uid://bclwdogtywc0k"]
 
 [ext_resource type="Script" path="res://Scenes/Main Menu/Credits.gd" id="1_ytin3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bku7n"]
+size = Vector2(144.505, 66.09)
 
 [sub_resource type="LabelSettings" id="LabelSettings_yy11l"]
 font_size = 40
@@ -28,6 +31,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Back"
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="HBoxContainer/Button"]
+position = Vector2(73.0001, 34.0001)
+shape = SubResource("RectangleShape2D_bku7n")
+
 [node name="Label" type="Label" parent="."]
 anchors_preset = -1
 anchor_left = 0.323
@@ -47,4 +54,5 @@ label_settings = SubResource("LabelSettings_yy11l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_back_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button/TouchScreenButton" to="." method="_back_button_pressed"]
