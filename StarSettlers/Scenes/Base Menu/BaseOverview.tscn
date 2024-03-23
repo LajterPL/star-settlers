@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://xmm8wr0bh6bl"]
+[gd_scene load_steps=5 format=3 uid="uid://xmm8wr0bh6bl"]
 
 [ext_resource type="Texture2D" uid="uid://dswfsfnouq0m2" path="res://icon.svg" id="1_fskvj"]
 [ext_resource type="Script" path="res://Scenes/Base Menu/BaseOverview.gd" id="1_yjl12"]
 [ext_resource type="Texture2D" uid="uid://em6ii00gwqrw" path="res://Scenes/Base Menu/research_progress_bar.png" id="2_shrxk"]
+[ext_resource type="PackedScene" uid="uid://3wokym7tp8hl" path="res://Scenes/Dialog/DialogScreen.tscn" id="4_6pwj6"]
 
 [node name="BaseOverview" type="CanvasLayer"]
 script = ExtResource("1_yjl12")
@@ -314,6 +315,7 @@ icon_mode = 0
 item_0/text = ""
 
 [node name="ResearchPanel" type="Control" parent="Panel"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -521,7 +523,6 @@ size_flags_horizontal = 4
 text = "Research Tree"
 
 [node name="CommsPanel" type="Control" parent="Panel"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -604,68 +605,15 @@ text = "Reputation:"
 layout_mode = 2
 text = "Neutral"
 
-[node name="Right" type="VBoxContainer" parent="Panel/CommsPanel"]
-clip_contents = true
+[node name="DialogueScreen" parent="Panel/CommsPanel" instance=ExtResource("4_6pwj6")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
+anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 50.0
 offset_top = 20.0
 offset_right = -50.0
-alignment = 1
-
-[node name="DialogContainer" type="ScrollContainer" parent="Panel/CommsPanel/Right"]
-layout_mode = 2
-size_flags_vertical = 3
-horizontal_scroll_mode = 0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/CommsPanel/Right/DialogContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 25
-
-[node name="Dialog" type="RichTextLabel" parent="Panel/CommsPanel/Right/DialogContainer/VBoxContainer"]
-layout_mode = 2
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper faucibus diam, sed efficitur justo euismod vitae. Sed molestie dolor id tincidunt finibus. Nullam imperdiet massa purus, in eleifend eros dignissim a. In libero lacus, pulvinar vitae felis eget, cursus lacinia lacus. Nunc egestas eros lectus, nec vestibulum quam eleifend sed. Curabitur dapibus, urna sed sodales tempor, lectus magna rhoncus erat, sit amet fermentum enim ipsum eget augue. Fusce ipsum velit, bibendum id elementum non, consequat eget lorem. Nullam et ligula mollis, rhoncus nulla at, varius erat. Cras hendrerit turpis eget lacinia gravida. Nulla pulvinar erat sed eleifend dignissim. "
-fit_content = true
-scroll_active = false
-
-[node name="Dialog2" type="RichTextLabel" parent="Panel/CommsPanel/Right/DialogContainer/VBoxContainer"]
-layout_mode = 2
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper faucibus diam, sed efficitur justo euismod vitae. Sed molestie dolor id tincidunt finibus. Nullam imperdiet massa purus, in eleifend eros dignissim a. In libero lacus, pulvinar vitae felis eget, cursus lacinia lacus. Nunc egestas eros lectus, nec vestibulum quam eleifend sed. Curabitur dapibus, urna sed sodales tempor, lectus magna rhoncus erat, sit amet fermentum enim ipsum eget augue. Fusce ipsum velit, bibendum id elementum non, consequat eget lorem. Nullam et ligula mollis, rhoncus nulla at, varius erat. Cras hendrerit turpis eget lacinia gravida. Nulla pulvinar erat sed eleifend dignissim. "
-fit_content = true
-scroll_active = false
-
-[node name="Dialog3" type="RichTextLabel" parent="Panel/CommsPanel/Right/DialogContainer/VBoxContainer"]
-layout_mode = 2
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper faucibus diam, sed efficitur justo euismod vitae. Sed molestie dolor id tincidunt finibus. Nullam imperdiet massa purus, in eleifend eros dignissim a. In libero lacus, pulvinar vitae felis eget, cursus lacinia lacus. Nunc egestas eros lectus, nec vestibulum quam eleifend sed. Curabitur dapibus, urna sed sodales tempor, lectus magna rhoncus erat, sit amet fermentum enim ipsum eget augue. Fusce ipsum velit, bibendum id elementum non, consequat eget lorem. Nullam et ligula mollis, rhoncus nulla at, varius erat. Cras hendrerit turpis eget lacinia gravida. Nulla pulvinar erat sed eleifend dignissim. "
-fit_content = true
-scroll_active = false
-
-[node name="DialogOptions" type="VBoxContainer" parent="Panel/CommsPanel/Right"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.8
-
-[node name="OptionButton" type="Button" parent="Panel/CommsPanel/Right/DialogOptions"]
-layout_mode = 2
-text = "Option 1"
-
-[node name="OptionButton2" type="Button" parent="Panel/CommsPanel/Right/DialogOptions"]
-layout_mode = 2
-text = "Option 2
-"
-
-[node name="OptionButton3" type="Button" parent="Panel/CommsPanel/Right/DialogOptions"]
-layout_mode = 2
-text = "Option 3"
-
-[node name="OptionButton4" type="Button" parent="Panel/CommsPanel/Right/DialogOptions"]
-layout_mode = 2
-text = "Option 4"
+offset_bottom = -20.0
 
 [node name="DoubleClickTimer" type="Timer" parent="."]
 wait_time = 0.3
