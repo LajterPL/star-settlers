@@ -1,0 +1,34 @@
+[
+	{
+		"type": "text",
+		"content": "Hello"
+	},
+	{
+		"type": "text",
+		"content": "World"
+	},
+	{
+		"type": "decision",
+		"content": "Choose your path:",
+		"options": [
+			{
+				"title": "Say Hello",
+				"queue": [
+					{
+						"type": "text",
+						"content": "Hello"
+					}
+				]
+			},
+			{
+				"title": "Say World",
+				"queue": [
+					{
+						"type": "text",
+						"content": "World"
+					}
+				]
+			}
+		]
+	}
+]
