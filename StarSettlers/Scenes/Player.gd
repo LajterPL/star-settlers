@@ -27,7 +27,11 @@ func _unhandled_input(event):
 					var touch_position = position - ((get_global_transform_with_canvas().origin - event.position) / player_camera.zoom.x)
 					var tile_position = tile_map.local_to_map(touch_position)
 					var tile_data = tile_map.get_cell_tile_data(ground_layer,tile_position,false)
-					if tile_data != null and tile_data.get_custom_data("walkable"):
+					var can_stand_near = false
+					for cell in tile_map.get_surrounding_cells(tile_position):
+						if tile_map.get_cell_tile_data(ground_layer, cell, false).get_custom_data("walkable"):
+							can_stand_near = true
+					if tile_data != null and tile_data.get_custom_data("walkable") or can_stand_near:
 						var path
 						if is_moving:
 							path = tile_map.a_star_path(

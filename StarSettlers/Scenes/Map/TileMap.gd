@@ -102,9 +102,11 @@ func a_star_path(start: Vector2i, target: Vector2i):
 	g_score[start] = 0
 	f_score[start] = heuristic(start, target)
 	
+	var target_walkable = get_cell_tile_data(ground_layer, target, false).get_custom_data("walkable")
+	
 	while open_set.size() > 0:
 		var current = get_lowest_f_score(open_set, f_score)
-		if current == target:
+		if (target_walkable and (current == target)) or (!target_walkable and current in get_surrounding_cells(target)):
 			return reconstruct_path(came_from, current)
 			
 		open_set.erase(current)
