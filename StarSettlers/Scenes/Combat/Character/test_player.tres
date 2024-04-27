@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Character" load_steps=5 format=3 uid="uid://ngc7endqrut7"]
+
+[ext_resource type="Script" path="res://Scenes/Combat/Character/CharacterTemplate.gd" id="1_g1rgi"]
+[ext_resource type="Script" path="res://Scenes/Equipment/Equipemnt.gd" id="1_q5qev"]
+[ext_resource type="Texture2D" uid="uid://dbud34oe8vw5e" path="res://new_Sprites/astronaut.png" id="2_gioot"]
+
+[sub_resource type="Resource" id="Resource_byyet"]
+script = ExtResource("1_q5qev")
+items = Array[Resource("res://Scenes/Equipment/ItemTemplate.gd")]([])
+max_size = 0
+
+[resource]
+script = ExtResource("1_g1rgi")
+icon = ExtResource("2_gioot")
+name = &"Player"
+description = "This is you"
+equipment = SubResource("Resource_byyet")
+strenght = 5
+agility = 5
+max_hp = 10
+current_hp = 10

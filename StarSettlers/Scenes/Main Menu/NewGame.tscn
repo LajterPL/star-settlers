@@ -42,7 +42,6 @@ offset_right = 640.0
 offset_bottom = 128.0
 texture = ExtResource("1_winw1")
 stretch_mode = 5
-flip_h = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="FactionSelection"]
 layout_mode = 1

@@ -1,0 +1,117 @@
+[gd_scene load_steps=3 format=3 uid="uid://36nycxnuxwoe"]
+
+[ext_resource type="Script" path="res://Scenes/Combat/ComabatScreen.gd" id="1_b7b22"]
+[ext_resource type="Texture2D" uid="uid://dbud34oe8vw5e" path="res://new_Sprites/astronaut.png" id="2_tq5db"]
+
+[node name="ComabatScreen" type="CanvasLayer"]
+script = ExtResource("1_b7b22")
+
+[node name="VisualPanel" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.5
+
+[node name="Control" type="Control" parent="VisualPanel"]
+anchors_preset = 0
+offset_top = 50.0
+offset_right = 40.0
+offset_bottom = 90.0
+
+[node name="TextureRect" type="TextureRect" parent="VisualPanel/Control"]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("2_tq5db")
+expand_mode = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="VisualPanel/Control"]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 160.0
+offset_bottom = -10.0
+value = 100.0
+show_percentage = false
+
+[node name="InfoPanel" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ActionsPanel" type="GridContainer" parent="InfoPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+columns = 4
+
+[node name="WalkButton" type="Button" parent="InfoPanel/ActionsPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Walk"
+
+[node name="RunButton" type="Button" parent="InfoPanel/ActionsPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Run"
+
+[node name="LightAttackButton" type="Button" parent="InfoPanel/ActionsPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Light Attack"
+
+[node name="HeavyAttackButton" type="Button" parent="InfoPanel/ActionsPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Heavy Attack"
+
+[node name="ShootButton" type="Button" parent="InfoPanel/ActionsPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Shoot"
+
+[node name="DefenseButton" type="Button" parent="InfoPanel/ActionsPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Defense"
+
+[node name="DodgeButton" type="Button" parent="InfoPanel/ActionsPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Dodge"
+
+[node name="EscapeButton" type="Button" parent="InfoPanel/ActionsPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Escape"
+
+[node name="OtherPanel" type="VBoxContainer" parent="InfoPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="InfoPanel/OtherPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InfoPanel/OtherPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AcceptTurn" type="Button" parent="InfoPanel/OtherPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Accept"
+
+[node name="CancelTurn" type="Button" parent="InfoPanel/OtherPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Cancel"
