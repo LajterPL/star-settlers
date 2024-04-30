@@ -607,13 +607,6 @@ text = "Neutral"
 
 [node name="DialogueScreen" parent="Panel/CommsPanel" instance=ExtResource("4_6pwj6")]
 layout_mode = 1
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 50.0
-offset_top = 20.0
-offset_right = -50.0
-offset_bottom = -20.0
 
 [node name="DoubleClickTimer" type="Timer" parent="."]
 wait_time = 0.3
