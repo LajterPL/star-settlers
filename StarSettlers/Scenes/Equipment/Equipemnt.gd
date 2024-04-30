@@ -1,15 +1,12 @@
 extends Resource
-## Klasa dla obiektów zawierających jakiś ekwipunek
 class_name Equipment
 
-@export var items : Array[Item] ## Tablica przedmiotów.
+@export var items : Array[Item] = []## Tablica przedmiotów.
 
 ## Maksymalna liczba przedmiotów w tym ekwipunku.
 ## Liczba slotów w GUI.
-@export var max_size : int 
+@export var max_size : int  = 0
 
-func _init(max_size : int = 0, items : Array[Item] = []):
-	self.max_size = max_size
 
 ## Funkcja zwracająca przedmiot o podanym indeksie z ekwipunku i usuwająca go z niego
 func retrive_item(index : int) -> Item:

@@ -9,20 +9,11 @@ extends CanvasLayer
 var last_click_container_flag : bool = false # Flaga określająca która lista została ostatnio kliknięta
 var last_click_index : int = 0 # Indeks ostatniego klikniętego przedmiotu
 
-var left_equipment : Equipment
-var right_equipment : Equipment
+@export var left_equipment : Equipment
+@export var right_equipment : Equipment
 
 func _ready():
-	var eq1 = Equipment.new(4)
-	var eq2 = Equipment.new(4)
-	
-	eq1.transfer_item(Item.new(&"Patyk", "", load("res://icon.svg")))
-	eq1.transfer_item(Item.new(&"Kamień", "", load("res://icon.svg")))
-	eq1.transfer_item(Item.new(&"Karabin laserowy", "", load("res://icon.svg")))
-	eq2.transfer_item(Item.new(&"Apteczka", "", load("res://icon.svg")))
-	eq2.transfer_item(Item.new(&"Racja żywnościowa", "", load("res://icon.svg")))
-	
-	load_equipment(eq1, eq2)
+	update_gui()
 
 func _on_right_item_list_item_clicked(index, at_position, mouse_button_index):
 	if not last_click_container_flag and last_click_index == index and not double_click_timer.is_stopped():

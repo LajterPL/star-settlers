@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://36nycxnuxwoe"]
+[gd_scene load_steps=13 format=3 uid="uid://36nycxnuxwoe"]
 
 [ext_resource type="Script" path="res://Scenes/Combat/ComabatScreen.gd" id="1_b7b22"]
 [ext_resource type="Texture2D" uid="uid://dbud34oe8vw5e" path="res://new_Sprites/astronaut.png" id="2_tq5db"]
@@ -8,6 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://mstlp70iu5d6" path="res://new_Sprites/heavy-attack-icon.png" id="6_eboh3"]
 [ext_resource type="Texture2D" uid="uid://dannt8dwsofl7" path="res://new_Sprites/shoot-icon.png" id="7_an1up"]
 [ext_resource type="Texture2D" uid="uid://bdeds8dfgcpk2" path="res://new_Sprites/defense-icon.png" id="8_i53h8"]
+[ext_resource type="Texture2D" uid="uid://bvconcjfgx4kc" path="res://new_Sprites/dodge-icon.png" id="9_6m0av"]
+[ext_resource type="Texture2D" uid="uid://cuwosnk6q71dn" path="res://new_Sprites/escape-icon.png" id="10_s0jpm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flbvv"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_umhj4"]
+allow_unpress = true
 
 [node name="ComabatScreen" type="CanvasLayer"]
 script = ExtResource("1_b7b22")
@@ -17,24 +25,59 @@ layout_mode = 3
 anchor_right = 1.0
 anchor_bottom = 0.5
 
-[node name="Control" type="Control" parent="VisualPanel"]
-anchors_preset = 0
-offset_top = 50.0
-offset_right = 40.0
-offset_bottom = 90.0
+[node name="Background" type="Control" parent="VisualPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="VisualPanel/Control"]
+[node name="ColorRect" type="ColorRect" parent="VisualPanel/Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 0.588235, 0.329412, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="VisualPanel/Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.521569, 0.729412, 0.972549, 1)
+
+[node name="Characters" type="Control" parent="VisualPanel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TestCharacter" type="Control" parent="VisualPanel/Characters"]
+anchors_preset = 0
+offset_top = 97.0
+offset_right = 40.0
+offset_bottom = 137.0
+
+[node name="TextureRect" type="TextureRect" parent="VisualPanel/Characters/TestCharacter"]
+texture_filter = 1
 layout_mode = 0
 offset_right = 160.0
 offset_bottom = 160.0
 texture = ExtResource("2_tq5db")
 expand_mode = 3
 
-[node name="ProgressBar" type="ProgressBar" parent="VisualPanel/Control"]
+[node name="ProgressBar" type="ProgressBar" parent="VisualPanel/Characters/TestCharacter"]
 layout_mode = 0
+offset_left = 30.0
 offset_top = -20.0
-offset_right = 160.0
+offset_right = 130.0
 offset_bottom = -10.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_flbvv")
 value = 100.0
 show_percentage = false
 
@@ -55,6 +98,8 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_umhj4")
 icon = ExtResource("3_6vk57")
 icon_alignment = 1
 expand_icon = true
@@ -64,6 +109,8 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_umhj4")
 icon = ExtResource("4_g7lrr")
 icon_alignment = 1
 expand_icon = true
@@ -73,6 +120,8 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_umhj4")
 icon = ExtResource("5_43l16")
 icon_alignment = 1
 expand_icon = true
@@ -82,6 +131,8 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_umhj4")
 icon = ExtResource("6_eboh3")
 icon_alignment = 1
 expand_icon = true
@@ -91,6 +142,9 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+disabled = true
+toggle_mode = true
+button_group = SubResource("ButtonGroup_umhj4")
 icon = ExtResource("7_an1up")
 icon_alignment = 1
 expand_icon = true
@@ -100,21 +154,33 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_umhj4")
 icon = ExtResource("8_i53h8")
 icon_alignment = 1
 expand_icon = true
 
 [node name="DodgeButton" type="Button" parent="InfoPanel/ActionsPanel"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Dodge"
+toggle_mode = true
+button_group = SubResource("ButtonGroup_umhj4")
+icon = ExtResource("9_6m0av")
+icon_alignment = 1
+expand_icon = true
 
 [node name="EscapeButton" type="Button" parent="InfoPanel/ActionsPanel"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Escape"
+toggle_mode = true
+button_group = SubResource("ButtonGroup_umhj4")
+icon = ExtResource("10_s0jpm")
+icon_alignment = 1
+expand_icon = true
 
 [node name="OtherPanel" type="VBoxContainer" parent="InfoPanel"]
 layout_mode = 2
@@ -123,6 +189,8 @@ size_flags_horizontal = 3
 [node name="DescriptionLabel" type="RichTextLabel" parent="InfoPanel/OtherPanel"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 24
+text = "Testowy opis"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="InfoPanel/OtherPanel"]
 layout_mode = 2
@@ -132,10 +200,23 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
 text = "Accept"
 
 [node name="CancelTurn" type="Button" parent="InfoPanel/OtherPanel/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
 text = "Cancel"
+
+[connection signal="pressed" from="InfoPanel/ActionsPanel/WalkButton" to="." method="_on_walk_button_pressed"]
+[connection signal="pressed" from="InfoPanel/ActionsPanel/RunButton" to="." method="_on_run_button_pressed"]
+[connection signal="pressed" from="InfoPanel/ActionsPanel/LightAttackButton" to="." method="_on_light_attack_button_pressed"]
+[connection signal="pressed" from="InfoPanel/ActionsPanel/HeavyAttackButton" to="." method="_on_heavy_attack_button_pressed"]
+[connection signal="pressed" from="InfoPanel/ActionsPanel/ShootButton" to="." method="_on_shoot_button_pressed"]
+[connection signal="pressed" from="InfoPanel/ActionsPanel/DefenseButton" to="." method="_on_defense_button_pressed"]
+[connection signal="pressed" from="InfoPanel/ActionsPanel/DodgeButton" to="." method="_on_dodge_button_pressed"]
+[connection signal="pressed" from="InfoPanel/ActionsPanel/EscapeButton" to="." method="_on_escape_button_pressed"]
+[connection signal="pressed" from="InfoPanel/OtherPanel/HBoxContainer/AcceptTurn" to="." method="_on_accept_turn_pressed"]

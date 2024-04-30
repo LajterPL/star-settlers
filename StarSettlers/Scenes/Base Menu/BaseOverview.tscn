@@ -315,7 +315,6 @@ icon_mode = 0
 item_0/text = ""
 
 [node name="ResearchPanel" type="Control" parent="Panel"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -523,6 +522,7 @@ size_flags_horizontal = 4
 text = "Research Tree"
 
 [node name="CommsPanel" type="Control" parent="Panel"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
