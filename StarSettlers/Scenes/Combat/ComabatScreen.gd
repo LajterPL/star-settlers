@@ -1,6 +1,8 @@
 extends CanvasLayer
 
 signal character_clicked
+signal player_won
+signal player_lost
 
 @onready var visual_panel : Control = $VisualPanel/Characters
 @export var combat_area_size : int = 12
@@ -161,7 +163,7 @@ func _on_accept_turn_pressed():
 		"ShootButton":
 			var target = await select_target()
 			
-			target.current_hp -= 1
+			ranged_fight(game_info.player, target)
 		
 	update_screen()
 	
@@ -169,6 +171,14 @@ func _on_accept_turn_pressed():
 		if character.current_hp <= 0:
 			characters[character][1].queue_free()
 			characters.erase(character)
+		
+	if characters.size() == 1:
+		emit_signal("player_won")
+		
+	enemy_turn()
+			
+	if game_info.player.current_hp == 0:
+		emit_signal("player_lost")
 			
 	update_screen()
 	
@@ -271,8 +281,61 @@ hit_mod : float = 0):
 	else:
 		set_description("%s missed %s!" % [attacker.name, defender.name])
 		
-func ranged_fight():
-	pass
+func ranged_fight(attacker : Character, defender : Character, 
+defense_mod : float = 0, dodge_mod : float = 0, dmg_recv_mod : float = 0,
+hit_mod : float = 0):
+	var weapon : Item = null
+		
+	for item in attacker.equipment.items:
+		if item.type == Item.ItemType.RANGED:
+			weapon = item
+			break
+	
+	var dodge_roll = randi() % 30 + 10 * defender.agility
+	var hit_roll = randi() % 30 + 10 * attacker.agility
+	
+	if weapon != null:
+		hit_mod += weapon.values["hit_mod"]
+	
+	if dodge_roll + dodge_mod * dodge_roll < hit_roll + hit_mod * hit_roll:
+		
+		var dmg_roll = 1
+		
+		if weapon != null:
+			
+			var min_dmg = weapon.values["min_dmg"]
+			var max_dmg = weapon.values["max_dmg"]
+			
+			dmg_roll = (randi() % (max_dmg - min_dmg)) + min_dmg
+			
+		dmg_roll -= dmg_roll * defense_mod
+		dmg_roll += dmg_roll * dmg_recv_mod
+		
+		defender.current_hp -= dmg_roll
+		
+		set_description("%s shot %s for %d dmg!" % [attacker.name, defender.name, dmg_roll])
+	else:
+		set_description("%s missed %s!" % [attacker.name, defender.name])
+
+func enemy_turn():
+	for character in characters:
+		if character == game_info.player:
+			continue
+			
+		var char_pos = characters[character][0]
+		var player_pos = characters[game_info.player][0]
+		
+		if char_pos == player_pos + 1:
+			melee_fight(character, game_info.player, defense_mod, dodge_mod, dmg_recv_mod)
+		else:
+			
+			for item in character.equipment.items:
+				if item.type == Item.ItemType.RANGED:
+					ranged_fight(character, game_info.player, defense_mod, dodge_mod, dmg_recv_mod)
+					return
+					
+			if len(find_character_at([char_pos - 1])) == 0:
+				characters[character][0] -= 1
 
 func _on_walk_button_pressed():
 	set_description("Move 1 space forward")

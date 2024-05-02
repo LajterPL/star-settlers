@@ -12,8 +12,9 @@ name = &"Strzelba"
 description = "Zwykła dwururka"
 type = 1
 values = {
-"dmg": 5,
-"hit_chance": 0.2
+"hit_mod": 0.1,
+"max_dmg": 6,
+"min_dmg": 4
 }
 
 [sub_resource type="Resource" id="Resource_13gn1"]
