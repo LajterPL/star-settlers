@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Character" load_steps=5 format=3 uid="uid://xgvxtfxl1g8n"]
+
+[ext_resource type="Script" path="res://Resources/EquipemntTemplate.gd" id="1_0fawf"]
+[ext_resource type="Script" path="res://Resources/Character/CharacterTemplate.gd" id="1_jch2l"]
+[ext_resource type="Resource" uid="uid://cbnkk7xayqas" path="res://Resources/Item/test_sword.tres" id="1_x010b"]
+
+[sub_resource type="Resource" id="Resource_djtlf"]
+script = ExtResource("1_0fawf")
+items = Array[Resource("res://Resources/Item/ItemTemplate.gd")]([ExtResource("1_x010b")])
+max_size = 0
+
+[resource]
+script = ExtResource("1_jch2l")
+name = &""
+description = ""
+equipment = SubResource("Resource_djtlf")
+strenght = 0
+agility = 0
+max_hp = 0
+current_hp = 0

@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Character" load_steps=8 format=3 uid="uid://ngc7endqrut7"]
+
+[ext_resource type="Script" path="res://Resources/Character/CharacterTemplate.gd" id="1_5wydy"]
+[ext_resource type="Script" path="res://Resources/Item/ItemTemplate.gd" id="1_i732f"]
+[ext_resource type="Resource" uid="uid://cbnkk7xayqas" path="res://Resources/Item/test_sword.tres" id="2_s1ksw"]
+[ext_resource type="Script" path="res://Resources/EquipemntTemplate.gd" id="3_hjcqn"]
+[ext_resource type="Texture2D" uid="uid://dbud34oe8vw5e" path="res://new_Sprites/astronaut.png" id="4_5a0b7"]
+
+[sub_resource type="Resource" id="Resource_5ypoy"]
+script = ExtResource("1_i732f")
+name = &"Shotgun"
+description = ""
+type = 1
+values = {
+"hit_mod": -0.1,
+"max_dmg": 4,
+"min_dmg": 2
+}
+
+[sub_resource type="Resource" id="Resource_asxyl"]
+script = ExtResource("3_hjcqn")
+items = Array[ExtResource("1_i732f")]([SubResource("Resource_5ypoy"), ExtResource("2_s1ksw")])
+max_size = 4
+
+[resource]
+script = ExtResource("1_5wydy")
+icon = ExtResource("4_5a0b7")
+name = &"Player"
+description = "This is you"
+equipment = SubResource("Resource_asxyl")
+strenght = 5
+agility = 5
+max_hp = 10
+current_hp = 10

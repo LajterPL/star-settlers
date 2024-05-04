@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Equipment" load_steps=3 format=3 uid="uid://c7sr2h32geg00"]
+
+[ext_resource type="Resource" uid="uid://cbnkk7xayqas" path="res://Resources/Item/test_sword.tres" id="1_sqooc"]
+[ext_resource type="Script" path="res://Resources/EquipemntTemplate.gd" id="2_id13r"]
+
+[resource]
+script = ExtResource("2_id13r")
+items = Array[Resource("res://Scenes/Equipment/ItemTemplate.gd")]([ExtResource("1_sqooc")])
+max_size = 4

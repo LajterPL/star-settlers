@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cf72frncxeo8l"]
 
-[ext_resource type="Script" path="res://Scenes/Equipment/ItemTemplate.gd" id="1_hd8ba"]
+[ext_resource type="Script" path="res://Resources/Item/ItemTemplate.gd" id="1_hd8ba"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wdttp"]
 size = Vector2(256, 256)
@@ -10,3 +10,5 @@ script = ExtResource("1_hd8ba")
 icon = SubResource("PlaceholderTexture2D_wdttp")
 name = &"Test Item"
 description = "This is a debug item"
+type = 0
+values = {}
