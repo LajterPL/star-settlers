@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Faction" load_steps=4 format=3 uid="uid://bdmqmb2ftfxsl"]
+
+[ext_resource type="Script" path="res://Resources/Faction/FactionTemplate.gd" id="1_25ia6"]
+[ext_resource type="Texture2D" uid="uid://ds4m4e6wyv0ig" path="res://new_Sprites/logo-dingo2.png" id="1_cps0g"]
+[ext_resource type="Resource" uid="uid://dt763wc7ptqvc" path="res://Resources/Character/StartingCharacters/player_dingo.tres" id="3_u5x5b"]
+
+[resource]
+script = ExtResource("1_25ia6")
+icon = ExtResource("1_cps0g")
+name = &"Dingo Syndicate"
+description = "Dawniej znany jako Dingo Security, Syndykat to dawna firma ochroniarska, pełniąca rolę prywatnej policji w rejonach pogranicza. Po upadku Federacji, przejęli kontrolę nad większością zorganizowanych grup przestępczych, operujących w tym rejonie i wcielili je w swoje szeregi. Poza zapasem broni, jednym z ich głównych zasobów są właśnie więźniowie, którzy stanowią znaczną część ich siły roboczej. 
+
+Jesteś jednym z tych więźniów, nagrodą za pomyślnie wykonaną misję, jest dla ciebie awans w hierarchii Syndykatu, który pozwoli ci wieść swobodne życie. Do twojego krwioobiegu zostały zaaplikowane nanity, które są zaprogramowane, żeby polepszyć twoje zdolności fizyczne, jak uniemożliwić ci opuszczenie planety bez autoryzacji Syndykatu."
+starting_character = ExtResource("3_u5x5b")

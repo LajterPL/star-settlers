@@ -7,7 +7,7 @@ class_name Character
 
 @export var equipment : Equipment = Equipment.new()
 
-@export var strenght : int = 0
+@export var strength : int = 0
 @export var agility : int = 0
 
 @export var max_hp : int = 0

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Faction" load_steps=4 format=3 uid="uid://d160y3de0jwni"]
+
+[ext_resource type="Script" path="res://Resources/Faction/FactionTemplate.gd" id="1_b6u7v"]
+[ext_resource type="Texture2D" uid="uid://dfrv0wadp7h2c" path="res://new_Sprites/logo-vcorp.png" id="1_vvffg"]
+[ext_resource type="Resource" uid="uid://dgk67ky767qgd" path="res://Resources/Character/StartingCharacters/player_vcorp.tres" id="3_8j5s3"]
+
+[resource]
+script = ExtResource("1_b6u7v")
+icon = ExtResource("1_vvffg")
+name = &"VCorp"
+description = "VCorp przed upadkiem Federacji zajmował się głównie wytwarzaniem oraz genetyczną modyfikacją żywności. Kiedy zabrakło instytucji kontrolujących ich badania, Korporacja zaczęła eksperymentować również na ludziach, wykorzystując technologię klonowania, byli w stanie stworzyć całą armię hybryd ludzi oraz roślin, która otaczała zarząd korporacji fanatyczną czcią.
+
+Jesteś jedną z hybryd, jeśli twoja misja się powiedzie, zostaniesz uwieczniony, zostając wzorcem genetycznym dla przyszłych klonów i spełnisz cel swojego życia, jakim jest służba Korporacji. Dzięki modyfikacjom genetycznym, jesteś lepiej przystosowany do przetrwania w nieprzyjaznym środowisku i wymagasz mniej zasobów do przetrwania."
+starting_character = ExtResource("3_8j5s3")

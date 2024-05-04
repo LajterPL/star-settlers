@@ -271,7 +271,7 @@ hit_mod : float = 0):
 			
 			dmg_roll = (randi() % (max_dmg - min_dmg)) + min_dmg
 			
-		dmg_roll *= attacker.strenght / 5.0
+		dmg_roll *= attacker.strength / 5.0
 		dmg_roll -= dmg_roll * defense_mod
 		dmg_roll += dmg_roll * dmg_recv_mod
 		

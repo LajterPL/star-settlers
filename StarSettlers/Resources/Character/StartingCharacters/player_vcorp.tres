@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Character" load_steps=5 format=3 uid="uid://dgk67ky767qgd"]
+
+[ext_resource type="Script" path="res://Resources/Character/CharacterTemplate.gd" id="1_ghqee"]
+[ext_resource type="Script" path="res://Resources/EquipemntTemplate.gd" id="1_qrcsk"]
+[ext_resource type="Texture2D" uid="uid://dbud34oe8vw5e" path="res://new_Sprites/astronaut.png" id="2_n8bsa"]
+
+[sub_resource type="Resource" id="Resource_lvd6x"]
+script = ExtResource("1_qrcsk")
+items = Array[Resource("res://Resources/Item/ItemTemplate.gd")]([])
+max_size = 4
+
+[resource]
+script = ExtResource("1_ghqee")
+icon = ExtResource("2_n8bsa")
+name = &"Player"
+description = ""
+equipment = SubResource("Resource_lvd6x")
+strength = 5
+agility = 5
+max_hp = 12
+current_hp = 12

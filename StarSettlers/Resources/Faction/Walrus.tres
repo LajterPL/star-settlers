@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Faction" load_steps=4 format=3 uid="uid://dap6kh6vm74j3"]
+
+[ext_resource type="Texture2D" uid="uid://cat46oldb1770" path="res://new_Sprites/logo-walrus.png" id="1_gygik"]
+[ext_resource type="Script" path="res://Resources/Faction/FactionTemplate.gd" id="1_vi0no"]
+[ext_resource type="Resource" uid="uid://ocak83ktaoo1" path="res://Resources/Character/StartingCharacters/player_walrus.tres" id="3_v3nbd"]
+
+[resource]
+script = ExtResource("1_vi0no")
+icon = ExtResource("1_gygik")
+name = &"Walrus Institute"
+description = "Głównym celem Walrus Institute od zawsze była nauka, nawet upadek Federacji tego nie zmienił. Niewiele wiadomo na temat tego, co tak właściwie robi Instytut - jednak Instytut dobrze wie co dzieje się dookoła, za sprawą siatki szpiegów, która zinfiltrowała każdą organizację w dawnej Federacji. Krążą plotki, że Instytut może nawet wiedzieć co jest przyczyną upadku Federacji.
+
+Jesteś jedną z nielicznych osób, z którymi Instytut skontaktował się osobiście i dostałeś ofertę nie do odrzucenia, ta jedna robota pozwoli ci spędzić resztę życia w luksusie. Twój kontakt w Instytucie zapewnił cię, że wesprą cię swoją technologią."
+starting_character = ExtResource("3_v3nbd")

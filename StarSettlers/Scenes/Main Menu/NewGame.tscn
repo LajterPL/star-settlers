@@ -24,7 +24,7 @@ anchor_left = 0.4
 anchor_right = 0.6
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Choose Federation"
+text = "Wybierz Frakcję"
 label_settings = SubResource("LabelSettings_gote7")
 horizontal_alignment = 1
 
@@ -35,6 +35,7 @@ anchor_right = 0.5
 anchor_bottom = 0.8
 
 [node name="FactionLogo" type="TextureRect" parent="FactionSelection"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.6
@@ -52,7 +53,7 @@ anchor_bottom = 1.0
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="BackButton" type="Button" parent="FactionSelection/HBoxContainer"]
+[node name="PrevFactionButton" type="Button" parent="FactionSelection/HBoxContainer"]
 layout_mode = 2
 text = "<"
 
@@ -60,15 +61,15 @@ text = "<"
 layout_mode = 2
 text = "FactionName"
 
-[node name="ForwardButton" type="Button" parent="FactionSelection/HBoxContainer"]
+[node name="NextFactionButton" type="Button" parent="FactionSelection/HBoxContainer"]
 layout_mode = 2
 text = ">"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchors_preset = -1
-anchor_left = 0.5
+anchor_left = 0.55
 anchor_top = 0.1
-anchor_right = 1.0
+anchor_right = 0.95
 anchor_bottom = 0.8
 horizontal_scroll_mode = 0
 
@@ -92,7 +93,8 @@ Lobortis elementum nibh tellus molestie. In dictum non consectetur a erat. Ut po
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit pellentesque habitant morbi tristique senectus et. Enim nunc faucibus a pellentesque sit. Sed id semper risus in. Dignissim enim sit amet venenatis urna cursus eget. Ultrices sagittis orci a scelerisque purus semper. Tempor id eu nisl nunc mi ipsum faucibus vitae. Nisi quis eleifend quam adipiscing. Euismod elementum nisi quis eleifend quam adipiscing vitae. Sit amet tellus cras adipiscing enim eu turpis egestas. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Hendrerit gravida rutrum quisque non tellus.
 
 Lobortis elementum nibh tellus molestie. In dictum non consectetur a erat. Ut porttitor leo a diam sollicitudin tempor id eu nisl. Placerat orci nulla pellentesque dignissim enim sit amet. Consectetur a erat nam at. Libero id faucibus nisl tincidunt eget nullam. Ut consequat semper viverra nam libero justo laoreet sit amet. Amet volutpat consequat mauris nunc congue. Velit ut tortor pretium viverra suspendisse potenti nullam ac. Auctor urna nunc id cursus. Commodo sed egestas egestas fringilla. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc."
-autowrap_mode = 1
+horizontal_alignment = 3
+autowrap_mode = 2
 tab_stops = PackedFloat32Array(0)
 metadata/_edit_lock_ = true
 
@@ -127,5 +129,7 @@ text = "Confirm
 position = Vector2(222, 34.0001)
 shape = SubResource("RectangleShape2D_3x663")
 
+[connection signal="pressed" from="FactionSelection/HBoxContainer/PrevFactionButton" to="." method="_on_prev_faction_button_pressed"]
+[connection signal="pressed" from="FactionSelection/HBoxContainer/NextFactionButton" to="." method="_on_next_faction_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/BackButton/TouchScreenButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/ConfirmButton/TouchScreenButton" to="." method="_on_confirm_button_pressed"]
