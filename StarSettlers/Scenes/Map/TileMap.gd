@@ -1,5 +1,6 @@
 extends TileMap
 @onready var player = $"../Player"
+
 # id warstwy podłoża
 var ground_layer = 0
 var map_size = Vector2i(150,150)
@@ -8,6 +9,7 @@ var radius = map_size.x/4
 
 func _ready():
 	generate_bioms_layout()
+		
 
 ## główna funkcja generowania mapy
 ## iteruje po cistach krawędzi i wypełnia tak długo jak ma miejsce

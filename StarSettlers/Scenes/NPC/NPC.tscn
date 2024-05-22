@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhb1x3jsm3msn"]
+
+[ext_resource type="Script" path="res://Scenes/NPC/NPC.gd" id="1_hfvgw"]
+[ext_resource type="Texture2D" uid="uid://wbdhnebepiak" path="res://new_Sprites/enemy-astronaut.png" id="2_2havk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8j4aj"]
+size = Vector2(12, 16)
+
+[node name="NPC" type="CharacterBody2D"]
+script = ExtResource("1_hfvgw")
+
+[node name="NpcSprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -18)
+scale = Vector2(2.17033, 2.17033)
+texture = ExtResource("2_2havk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_8j4aj")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
