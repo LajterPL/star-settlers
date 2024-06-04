@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://Scenes/Combat/ComabatScreen.gd" id="1_b7b22"]
 [ext_resource type="Texture2D" uid="uid://dbud34oe8vw5e" path="res://new_Sprites/astronaut.png" id="2_tq5db"]
-[ext_resource type="Texture2D" uid="uid://d3o3loomvec3e" path="res://new_Sprites/walk-icon.png" id="3_6vk57"]
-[ext_resource type="Texture2D" uid="uid://bt22qpakow5pa" path="res://new_Sprites/run-icon.png" id="4_g7lrr"]
-[ext_resource type="Texture2D" uid="uid://bl28bhf6b5kku" path="res://new_Sprites/light-attack-icon.png" id="5_43l16"]
-[ext_resource type="Texture2D" uid="uid://mstlp70iu5d6" path="res://new_Sprites/heavy-attack-icon.png" id="6_eboh3"]
-[ext_resource type="Texture2D" uid="uid://dannt8dwsofl7" path="res://new_Sprites/shoot-icon.png" id="7_an1up"]
-[ext_resource type="Texture2D" uid="uid://bdeds8dfgcpk2" path="res://new_Sprites/defense-icon.png" id="8_i53h8"]
-[ext_resource type="Texture2D" uid="uid://bvconcjfgx4kc" path="res://new_Sprites/dodge-icon.png" id="9_6m0av"]
-[ext_resource type="Texture2D" uid="uid://cuwosnk6q71dn" path="res://new_Sprites/escape-icon.png" id="10_s0jpm"]
+[ext_resource type="Texture2D" uid="uid://dy328kps4b5yv" path="res://new_Sprites/walk-icon.png" id="3_6vk57"]
+[ext_resource type="Texture2D" uid="uid://dm2r5g888k6h6" path="res://new_Sprites/run-icon.png" id="4_g7lrr"]
+[ext_resource type="Texture2D" uid="uid://cjr8y0jlo0dtu" path="res://new_Sprites/light-attack-icon.png" id="5_43l16"]
+[ext_resource type="Texture2D" uid="uid://c0rsevqa4hk78" path="res://new_Sprites/heavy-attack-icon.png" id="6_eboh3"]
+[ext_resource type="Texture2D" uid="uid://b7mnl6ilmc2k" path="res://new_Sprites/shoot-icon.png" id="7_an1up"]
+[ext_resource type="Texture2D" uid="uid://10bi6asyj3xw" path="res://new_Sprites/defense-icon.png" id="8_i53h8"]
+[ext_resource type="Texture2D" uid="uid://dov8jvt1rx0nt" path="res://new_Sprites/dodge-icon.png" id="9_6m0av"]
+[ext_resource type="Texture2D" uid="uid://bblj3lhitpsil" path="res://new_Sprites/escape-icon.png" id="10_s0jpm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flbvv"]
 bg_color = Color(1, 0, 0, 1)
