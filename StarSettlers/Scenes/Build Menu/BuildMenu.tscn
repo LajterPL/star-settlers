@@ -1,0 +1,476 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxfyvu6xmei5b"]
+
+[ext_resource type="Script" path="res://Scenes/Build Menu/BuildMenu.gd" id="1_m46ke"]
+[ext_resource type="Texture2D" uid="uid://ctf13kh0uw0v6" path="res://Resources/BuildingImages/power_plant.png" id="1_u48jn"]
+[ext_resource type="Texture2D" uid="uid://cqy4t8316ny4s" path="res://Resources/BuildingImages/water_purifier.png" id="2_bx1jw"]
+[ext_resource type="Texture2D" uid="uid://c6qn8lwxn67nr" path="res://Resources/BuildingImages/steel_manufactory.png" id="3_aywkf"]
+[ext_resource type="Texture2D" uid="uid://b0x27ajulm8jj" path="res://Resources/BuildingImages/oxygen_tank.png" id="4_6bfok"]
+
+[node name="Build Menu" type="CanvasLayer"]
+script = ExtResource("1_m46ke")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1278.44
+offset_bottom = 723.715
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.266667, 0.266667, 0.266667, 1)
+
+[node name="Scroll Building List" type="ScrollContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.56494
+offset_bottom = -123.715
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Buildings List" type="VBoxContainer" parent="Control/Scroll Building List"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Power Plant" type="HBoxContainer" parent="Control/Scroll Building List/Buildings List"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/Scroll Building List/Buildings List/Power Plant"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_u48jn")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/Scroll Building List/Buildings List/Power Plant"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Power Plant"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Scroll Building List/Buildings List/Power Plant"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="Control/Scroll Building List/Buildings List/Power Plant/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Oxygen
+ Cost:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Scroll Building List/Buildings List/Power Plant/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/Scroll Building List/Buildings List/Power Plant"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="Control/Scroll Building List/Buildings List/Power Plant/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Water Cost:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Scroll Building List/Buildings List/Power Plant/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Control/Scroll Building List/Buildings List/Power Plant"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="Control/Scroll Building List/Buildings List/Power Plant/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Electicity Cost:
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Scroll Building List/Buildings List/Power Plant/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Control/Scroll Building List/Buildings List/Power Plant"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="Control/Scroll Building List/Buildings List/Power Plant/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Steel Cost:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Scroll Building List/Buildings List/Power Plant/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PowerPlant_button" type="Button" parent="Control/Scroll Building List/Buildings List/Power Plant"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Build"
+
+[node name="Water Purifier" type="HBoxContainer" parent="Control/Scroll Building List/Buildings List"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/Scroll Building List/Buildings List/Water Purifier"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_bx1jw")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/Scroll Building List/Buildings List/Water Purifier"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Water Pufirier"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Scroll Building List/Buildings List/Water Purifier"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="Control/Scroll Building List/Buildings List/Water Purifier/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Oxygen
+ Cost:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Scroll Building List/Buildings List/Water Purifier/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/Scroll Building List/Buildings List/Water Purifier"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="Control/Scroll Building List/Buildings List/Water Purifier/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Water Cost:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Scroll Building List/Buildings List/Water Purifier/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Control/Scroll Building List/Buildings List/Water Purifier"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="Control/Scroll Building List/Buildings List/Water Purifier/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Electicity Cost:
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Scroll Building List/Buildings List/Water Purifier/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Control/Scroll Building List/Buildings List/Water Purifier"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="Control/Scroll Building List/Buildings List/Water Purifier/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Steel Cost:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Scroll Building List/Buildings List/Water Purifier/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WaterPurifierButton" type="Button" parent="Control/Scroll Building List/Buildings List/Water Purifier"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Build"
+
+[node name="Steel Manufactory" type="HBoxContainer" parent="Control/Scroll Building List/Buildings List"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/Scroll Building List/Buildings List/Steel Manufactory"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_aywkf")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/Scroll Building List/Buildings List/Steel Manufactory"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Steel Manufactory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Scroll Building List/Buildings List/Steel Manufactory"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="Control/Scroll Building List/Buildings List/Steel Manufactory/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Oxygen
+ Cost:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Scroll Building List/Buildings List/Steel Manufactory/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/Scroll Building List/Buildings List/Steel Manufactory"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="Control/Scroll Building List/Buildings List/Steel Manufactory/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Water Cost:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Scroll Building List/Buildings List/Steel Manufactory/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Control/Scroll Building List/Buildings List/Steel Manufactory"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="Control/Scroll Building List/Buildings List/Steel Manufactory/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Electicity Cost:
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Scroll Building List/Buildings List/Steel Manufactory/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Control/Scroll Building List/Buildings List/Steel Manufactory"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="Control/Scroll Building List/Buildings List/Steel Manufactory/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Steel Cost:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Scroll Building List/Buildings List/Steel Manufactory/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SteelManufactoryButton" type="Button" parent="Control/Scroll Building List/Buildings List/Steel Manufactory"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Build"
+
+[node name="Oxygen Tank" type="HBoxContainer" parent="Control/Scroll Building List/Buildings List"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/Scroll Building List/Buildings List/Oxygen Tank"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_6bfok")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/Scroll Building List/Buildings List/Oxygen Tank"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Oxygen Tank"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Scroll Building List/Buildings List/Oxygen Tank"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="Control/Scroll Building List/Buildings List/Oxygen Tank/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Oxygen
+ Cost:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Scroll Building List/Buildings List/Oxygen Tank/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/Scroll Building List/Buildings List/Oxygen Tank"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="Control/Scroll Building List/Buildings List/Oxygen Tank/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Water Cost:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Scroll Building List/Buildings List/Oxygen Tank/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Control/Scroll Building List/Buildings List/Oxygen Tank"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="Control/Scroll Building List/Buildings List/Oxygen Tank/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Electicity Cost:
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Scroll Building List/Buildings List/Oxygen Tank/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Control/Scroll Building List/Buildings List/Oxygen Tank"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="Control/Scroll Building List/Buildings List/Oxygen Tank/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Steel Cost:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Scroll Building List/Buildings List/Oxygen Tank/VBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OxygenTankButton" type="Button" parent="Control/Scroll Building List/Buildings List/Oxygen Tank"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Build"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 600.0
+offset_right = 960.0
+offset_bottom = 720.0
+
+[node name="Back" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Go Back"
+
+[connection signal="pressed" from="Control/Scroll Building List/Buildings List/Power Plant/PowerPlant_button" to="." method="_on_button_pressed" binds= ["PowerPlant"]]
+[connection signal="pressed" from="Control/Scroll Building List/Buildings List/Water Purifier/WaterPurifierButton" to="." method="_on_button_pressed" binds= ["WaterPurifier"]]
+[connection signal="pressed" from="Control/Scroll Building List/Buildings List/Steel Manufactory/SteelManufactoryButton" to="." method="_on_button_pressed" binds= ["SteelManufactory"]]
+[connection signal="pressed" from="Control/Scroll Building List/Buildings List/Oxygen Tank/OxygenTankButton" to="." method="_on_button_pressed" binds= ["OxygenTank"]]
+[connection signal="pressed" from="Control/HBoxContainer/Back" to="." method="_on_back_pressed"]
