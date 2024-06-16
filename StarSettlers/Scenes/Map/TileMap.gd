@@ -159,3 +159,22 @@ func get_point_path(path: Array[Vector2i]):
 	for vec in path:
 		point_path.append(map_to_local(vec))
 	return PackedVector2Array(point_path)
+	
+func create_building(option):
+	var building_tile = Vector2i(1, 1)
+	var player_position = player.global_position
+	var tilemap_position = local_to_map(player_position)
+	
+	var target_walkable = get_cell_tile_data(ground_layer, tilemap_position, false).get_custom_data("walkable")
+	
+	if target_walkable:
+		if option == "PowerPlant":
+			building_tile = Vector2i(3, 1)
+		elif option == "SteelManufactory":
+			building_tile = Vector2i(5, 1)
+		elif option == "WaterPurifier":
+			building_tile = Vector2i(7, 1)
+		elif option == "OxygenTank":
+			building_tile = Vector2i(9, 1)
+				
+		set_cell(ground_layer, tilemap_position, 1, building_tile)

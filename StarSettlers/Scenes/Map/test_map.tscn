@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=20 format=3 uid="uid://dnk37emhmbtxu"]
 
 [ext_resource type="Script" path="res://Scenes/Map/test_map.gd" id="1_kjgj2"]
@@ -12,6 +13,10 @@
 [ext_resource type="Script" path="res://Scenes/PlayerCamera.gd" id="8_d5qpy"]
 [ext_resource type="Texture2D" uid="uid://cjvgac5ufcd7s" path="res://bg_Sprites/Nebula Aqua-Pink.png" id="9_7dlnp"]
 [ext_resource type="Texture2D" uid="uid://b4dpbnrl4ov60" path="res://bg_Sprites/Stars Small_1.png" id="9_ibknc"]
+[ext_resource type="Script" path="res://Scenes/Map/UI.gd" id="12_4m0s6"]
+[ext_resource type="Texture2D" uid="uid://cunqd7yhmc34m" path="res://Resources/MenuIcons/pixil-frame-0.png" id="12_g3hfb"]
+[ext_resource type="Texture2D" uid="uid://c650dxy5lo1xp" path="res://Resources/MenuIcons/pixil-frame-0(1).png" id="13_nbt3w"]
+[ext_resource type="Texture2D" uid="uid://beiurublkha7j" path="res://Resources/MenuIcons/pixil-frame-0(3).png" id="14_ah812"]
 [ext_resource type="Texture2D" uid="uid://cy56q1ot867nh" path="res://new_Sprites/tile_set_1.png" id="28_f5a1g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2j4xd"]
@@ -654,3 +659,37 @@ position = Vector2(593, 182)
 scale = Vector2(0.041553, 0.041553)
 position_smoothing_enabled = true
 script = ExtResource("8_d5qpy")
+
+[node name="UI" type="CanvasLayer" parent="PlayerCamera"]
+script = ExtResource("12_4m0s6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerCamera/UI"]
+offset_left = 364.0
+offset_top = 632.0
+offset_right = 964.0
+offset_bottom = 692.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="PlayerCamera/UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("12_g3hfb")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button2" type="Button" parent="PlayerCamera/UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("13_nbt3w")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button3" type="Button" parent="PlayerCamera/UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("14_ah812")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="PlayerCamera/UI/HBoxContainer/Button3" to="PlayerCamera/UI" method="_on_button_3_pressed"]
