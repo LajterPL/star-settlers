@@ -35,12 +35,23 @@ func generate_bioms_layout():
 			):
 				edges[biom_pointer] = set_empty_neighbours(
 					tile_index, edges[biom_pointer],
-					Vector2i(randi() % 4, biom_pointer)
+					Vector2i(weighted_random_0_3(), biom_pointer)
 				)
 
 		fill_counter -= 1
 		biom_pointer = (biom_pointer + 1) % (number_of_bioms + 1)
 
+
+func weighted_random_0_3():
+	var rand_val = randf()
+	if rand_val < 0.75:
+		return 0
+	elif rand_val < 0.9:
+		return 1
+	elif rand_val < 0.97:
+		return 2
+	else:
+		return 3
 
 func vec_distance(a: Vector2i, b: Vector2i):
 	return sqrt(pow((a.x - b.x), 2) + pow((a.y - b.y), 2))
