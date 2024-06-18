@@ -7,6 +7,7 @@ var current_point_path: PackedVector2Array
 var target_position: Vector2
 var is_moving: bool
 var faceing_right: bool
+var is_chatting: bool = false
 
 @onready var drag_timer = $dragTimer
 var click_position
@@ -15,6 +16,10 @@ var click_position
 
 
 func _unhandled_input(event):
+	
+	if is_chatting:
+		return
+	
 	if event is InputEventScreenTouch:
 		if event.pressed:
 			drag_timer.start(0.15)

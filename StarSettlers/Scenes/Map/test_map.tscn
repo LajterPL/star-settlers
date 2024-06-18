@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dnk37emhmbtxu"]
+[gd_scene load_steps=28 format=3 uid="uid://dnk37emhmbtxu"]
 
 [ext_resource type="Script" path="res://Scenes/Map/test_map.gd" id="1_kjgj2"]
 [ext_resource type="Texture2D" uid="uid://ckf6iba8uvmgh" path="res://new_Sprites/tile_set_2.png" id="3_2y2cd"]
@@ -617,6 +617,9 @@ tile_proxies/coords_level = [[0, Vector2i(0, 0)], [15, Vector2i(0, 0)], [1, Vect
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqi8h"]
 size = Vector2(86, 339)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bcqyr"]
+radius = 200.0
+
 [node name="test_lvl" type="Node2D"]
 script = ExtResource("1_kjgj2")
 
@@ -698,8 +701,20 @@ texture = ExtResource("12_t5gsn")
 [node name="NPC" parent="." instance=ExtResource("3_q6ifx")]
 position = Vector2(727, 179)
 
+[node name="NPC2" parent="." instance=ExtResource("3_q6ifx")]
+position = Vector2(795, 179)
+
+[node name="NPC3" parent="." instance=ExtResource("3_q6ifx")]
+position = Vector2(727, 259)
+
 [node name="Player" parent="." instance=ExtResource("8_1biyw")]
 position = Vector2(346, 286)
+
+[node name="TalkRange" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/TalkRange"]
+visible = false
+shape = SubResource("CircleShape2D_bcqyr")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 scale = Vector2(0.041553, 0.041553)
@@ -710,10 +725,11 @@ script = ExtResource("8_d5qpy")
 script = ExtResource("12_4m0s6")
 
 [node name="MenuButtons" type="HBoxContainer" parent="PlayerCamera/UI"]
-offset_left = 364.0
-offset_top = 632.0
-offset_right = 964.0
-offset_bottom = 692.0
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.85
+anchor_right = 0.7
+anchor_bottom = 0.95
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -738,5 +754,14 @@ icon = ExtResource("14_ah812")
 icon_alignment = 1
 expand_icon = true
 
+[node name="ChatButton" type="Button" parent="PlayerCamera/UI"]
+anchors_preset = -1
+anchor_left = 0.85
+anchor_top = 0.85
+anchor_right = 0.95
+anchor_bottom = 0.95
+text = "Chat"
+
 [connection signal="pressed" from="PlayerCamera/UI/MenuButtons/Button2" to="PlayerCamera/UI" method="_on_eq_button_pressed"]
 [connection signal="pressed" from="PlayerCamera/UI/MenuButtons/Button3" to="PlayerCamera/UI" method="_on_button_3_pressed"]
+[connection signal="pressed" from="PlayerCamera/UI/ChatButton" to="PlayerCamera/UI" method="_on_chat_button_pressed"]
