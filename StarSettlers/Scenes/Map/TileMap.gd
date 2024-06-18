@@ -5,6 +5,7 @@ extends TileMap
 @onready var water = $"../PlayerCamera/UI/MaterialsUI/Water"
 @onready var electr = $"../PlayerCamera/UI/MaterialsUI/Electricity"
 @onready var steel = $"../PlayerCamera/UI/MaterialsUI/Steel"
+@onready var building_sound = $BuildingSound
 
 # id warstwy podłoża
 var ground_layer = 0
@@ -218,19 +219,23 @@ func create_building(option):
 				building_tile = Vector2i(3, 1)
 				materials_ui.electr_gain += 5
 				set_cell(ground_layer, tilemap_position, 1, building_tile)
+				building_sound.play()
 		elif option == "SteelManufactory":
 			if take_materials(15, 5, 50, 25):
 				building_tile = Vector2i(5, 1)
 				materials_ui.steel_gain += 5
 				set_cell(ground_layer, tilemap_position, 1, building_tile)
+				building_sound.play()
 		elif option == "WaterPurifier":
 			if take_materials(5, 20, 15, 25):
 				building_tile = Vector2i(7, 1)
 				materials_ui.water_gain += 5
 				set_cell(ground_layer, tilemap_position, 1, building_tile)
+				building_sound.play()
 		elif option == "OxygenTank":
 			if take_materials(15, 35, 5, 5):
 				building_tile = Vector2i(9, 1)
 				materials_ui.oxygen_gain += 5
 				set_cell(ground_layer, tilemap_position, 1, building_tile)
+				building_sound.play()
 				

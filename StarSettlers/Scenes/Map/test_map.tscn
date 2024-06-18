@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dnk37emhmbtxu"]
+[gd_scene load_steps=40 format=3 uid="uid://dnk37emhmbtxu"]
 
 [ext_resource type="Script" path="res://Scenes/Map/test_map.gd" id="1_kjgj2"]
 [ext_resource type="Texture2D" uid="uid://ckf6iba8uvmgh" path="res://new_Sprites/tile_set_2.png" id="3_2y2cd"]
@@ -12,17 +12,20 @@
 [ext_resource type="Script" path="res://Scenes/PlayerCamera.gd" id="8_d5qpy"]
 [ext_resource type="Texture2D" uid="uid://cjvgac5ufcd7s" path="res://bg_Sprites/Nebula Aqua-Pink.png" id="9_7dlnp"]
 [ext_resource type="Texture2D" uid="uid://b4dpbnrl4ov60" path="res://bg_Sprites/Stars Small_1.png" id="9_ibknc"]
+[ext_resource type="AudioStream" uid="uid://brvnbcvgdeiqq" path="res://Resources/Sounds/building.wav" id="10_31orh"]
 [ext_resource type="Script" path="res://Scenes/Map/UI.gd" id="12_4m0s6"]
 [ext_resource type="Texture2D" uid="uid://cunqd7yhmc34m" path="res://Resources/MenuIcons/pixil-frame-0.png" id="12_g3hfb"]
 [ext_resource type="Texture2D" uid="uid://bfdydlps674l8" path="res://new_Sprites/spaceship_Y.png" id="12_t5gsn"]
 [ext_resource type="Texture2D" uid="uid://c650dxy5lo1xp" path="res://Resources/MenuIcons/pixil-frame-0(1).png" id="13_nbt3w"]
 [ext_resource type="Texture2D" uid="uid://beiurublkha7j" path="res://Resources/MenuIcons/pixil-frame-0(3).png" id="14_ah812"]
+[ext_resource type="AudioStream" uid="uid://ciox0b67iy87h" path="res://Resources/Sounds/footstep.wav" id="15_pfxdd"]
 [ext_resource type="Script" path="res://Scenes/Map/MaterialsUI.gd" id="17_ihkto"]
 [ext_resource type="Texture2D" uid="uid://dt1y7qnscln6o" path="res://Resources/MenuIcons/pixil-frame-0(7).png" id="17_ln4ns"]
 [ext_resource type="Texture2D" uid="uid://uhghkq6tucjn" path="res://Resources/MenuIcons/pixil-frame-0(8).png" id="18_imxbd"]
 [ext_resource type="Texture2D" uid="uid://b2tabp26i2gej" path="res://new_Sprites/spaceship_x.png" id="18_mx16s"]
 [ext_resource type="Texture2D" uid="uid://bkwu18dbyah8a" path="res://Resources/MenuIcons/pixil-frame-0(9).png" id="19_j5pnp"]
 [ext_resource type="Texture2D" uid="uid://crhwngdmoglfp" path="res://Resources/MenuIcons/pixil-frame-0(10).png" id="20_j7ohw"]
+[ext_resource type="AudioStream" uid="uid://c841srq1h5qqv" path="res://Resources/Sounds/bg_music.wav" id="26_pvblq"]
 [ext_resource type="Texture2D" uid="uid://cy56q1ot867nh" path="res://new_Sprites/tile_set_1.png" id="28_f5a1g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2j4xd"]
@@ -709,6 +712,9 @@ layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array()
 script = ExtResource("4_0nqvv")
 
+[node name="BuildingSound" type="AudioStreamPlayer2D" parent="TileMap"]
+stream = ExtResource("10_31orh")
+
 [node name="Path" type="Node2D" parent="."]
 script = ExtResource("7_dqw77")
 metadata/show = true
@@ -752,6 +758,10 @@ position = Vector2(346, 286)
 visible = false
 shape = SubResource("CircleShape2D_bcqyr")
 
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("15_pfxdd")
+volume_db = -10.0
+
 [node name="PlayerCamera" type="Camera2D" parent="."]
 scale = Vector2(0.041553, 0.041553)
 limit_left = -100
@@ -788,6 +798,7 @@ texture = ExtResource("17_ln4ns")
 [node name="Oxygen" type="Label" parent="PlayerCamera/UI/MaterialsUI"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
 text = "100
 "
 horizontal_alignment = 1
@@ -805,6 +816,7 @@ texture = ExtResource("18_imxbd")
 [node name="Water" type="Label" parent="PlayerCamera/UI/MaterialsUI"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
 text = "100
 "
 horizontal_alignment = 1
@@ -822,6 +834,7 @@ texture = ExtResource("19_j5pnp")
 [node name="Electricity" type="Label" parent="PlayerCamera/UI/MaterialsUI"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -838,6 +851,7 @@ texture = ExtResource("20_j7ohw")
 [node name="Steel" type="Label" parent="PlayerCamera/UI/MaterialsUI"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -892,6 +906,10 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_rp5te")
 text = "Chat"
 
+[node name="bg_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_pvblq")
+volume_db = -5.0
+
 [connection signal="pressed" from="spaceship/TouchScreenButton" to="PlayerCamera/UI" method="_on_base_pressed"]
 [connection signal="timeout" from="PlayerCamera/UI/MaterialsUI/OxygenTimer" to="PlayerCamera/UI/MaterialsUI" method="_on_oxygen_timer_timeout"]
 [connection signal="timeout" from="PlayerCamera/UI/MaterialsUI/WaterTimer" to="PlayerCamera/UI/MaterialsUI" method="_on_water_timer_timeout"]
@@ -900,3 +918,4 @@ text = "Chat"
 [connection signal="pressed" from="PlayerCamera/UI/MenuButtons/Button2" to="PlayerCamera/UI" method="_on_eq_button_pressed"]
 [connection signal="pressed" from="PlayerCamera/UI/MenuButtons/Button3" to="PlayerCamera/UI" method="_on_button_3_pressed"]
 [connection signal="pressed" from="PlayerCamera/UI/ChatButton" to="PlayerCamera/UI" method="_on_chat_button_pressed"]
+[connection signal="finished" from="bg_music" to="." method="_on_bg_music_finished"]

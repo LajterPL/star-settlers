@@ -79,6 +79,7 @@ func _physics_process(_delta):
 	global_position = global_position.move_toward(target_position, 1.75)
 
 	if global_position == target_position:
+		$Footsteps.play()
 		current_path.pop_front()
 
 		if current_path.is_empty():
