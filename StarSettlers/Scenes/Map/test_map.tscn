@@ -709,7 +709,7 @@ script = ExtResource("8_d5qpy")
 [node name="UI" type="CanvasLayer" parent="PlayerCamera"]
 script = ExtResource("12_4m0s6")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PlayerCamera/UI"]
+[node name="MenuButtons" type="HBoxContainer" parent="PlayerCamera/UI"]
 offset_left = 364.0
 offset_top = 632.0
 offset_right = 964.0
@@ -717,25 +717,26 @@ offset_bottom = 692.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="PlayerCamera/UI/HBoxContainer"]
+[node name="Button" type="Button" parent="PlayerCamera/UI/MenuButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 icon = ExtResource("12_g3hfb")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button2" type="Button" parent="PlayerCamera/UI/HBoxContainer"]
+[node name="Button2" type="Button" parent="PlayerCamera/UI/MenuButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 icon = ExtResource("13_nbt3w")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button3" type="Button" parent="PlayerCamera/UI/HBoxContainer"]
+[node name="Button3" type="Button" parent="PlayerCamera/UI/MenuButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 icon = ExtResource("14_ah812")
 icon_alignment = 1
 expand_icon = true
 
-[connection signal="pressed" from="PlayerCamera/UI/HBoxContainer/Button3" to="PlayerCamera/UI" method="_on_button_3_pressed"]
+[connection signal="pressed" from="PlayerCamera/UI/MenuButtons/Button2" to="PlayerCamera/UI" method="_on_eq_button_pressed"]
+[connection signal="pressed" from="PlayerCamera/UI/MenuButtons/Button3" to="PlayerCamera/UI" method="_on_button_3_pressed"]

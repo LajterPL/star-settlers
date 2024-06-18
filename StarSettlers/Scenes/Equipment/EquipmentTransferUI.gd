@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal back_pressed
+
 @onready var left_item_list : ItemList = $LeftItemList
 @onready var right_item_list : ItemList = $RightItemList
 
@@ -16,6 +18,10 @@ func _ready():
 	update_gui()
 
 func _on_right_item_list_item_clicked(index, at_position, mouse_button_index):
+	
+	if left_item_list.visible == false:
+		return
+	
 	if not last_click_container_flag and last_click_index == index and not double_click_timer.is_stopped():
 		
 		transfer_item(index, left_equipment, right_equipment)
@@ -27,6 +33,10 @@ func _on_right_item_list_item_clicked(index, at_position, mouse_button_index):
 
 
 func _on_left_item_list_item_clicked(index, at_position, mouse_button_index):
+	
+	if right_item_list.visible == false:
+		return
+	
 	if last_click_container_flag and last_click_index == index and not double_click_timer.is_stopped():
 		
 		transfer_item(index, right_equipment, left_equipment)
@@ -54,11 +64,25 @@ func load_equipment(left : Equipment, right : Equipment):
 	update_gui()
 	
 func update_gui():
-	update_item_list(left_item_list, left_equipment)
-	update_item_list(right_item_list, right_equipment)
+	
+	left_item_list.hide()
+	right_item_list.hide()
+	
+	if left_equipment != null:
+		left_item_list.show()
+		update_item_list(left_item_list, left_equipment)
+		
+	if right_equipment != null:
+		right_item_list.show()
+		update_item_list(right_item_list, right_equipment)
 
 func update_item_list(item_list : ItemList, equipment : Equipment):
 	item_list.clear()
 	
 	for i in equipment.items:
 		item_list.add_item(i.name, i.icon, false)
+
+
+func _on_back_button_pressed():
+	emit_signal("back_pressed")
+	queue_free()
