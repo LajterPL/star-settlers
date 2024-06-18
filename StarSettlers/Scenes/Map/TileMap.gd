@@ -46,9 +46,9 @@ func weighted_random_0_3():
 	var rand_val = randf()
 	if rand_val < 0.75:
 		return 0
-	elif rand_val < 0.9:
-		return 1
 	elif rand_val < 0.97:
+		return 1
+	elif rand_val < 0.99:
 		return 2
 	else:
 		return 3
