@@ -1,5 +1,6 @@
 extends TileMap
 @onready var player = $"../Player"
+
 # id warstwy podłoża
 var ground_layer = 0
 var map_size = Vector2i(150,150)
@@ -10,6 +11,7 @@ func _ready():
 	GameInfo.map = self
 	
 	generate_bioms_layout()
+		
 
 ## główna funkcja generowania mapy
 ## iteruje po cistach krawędzi i wypełnia tak długo jak ma miejsce
@@ -35,12 +37,23 @@ func generate_bioms_layout():
 			):
 				edges[biom_pointer] = set_empty_neighbours(
 					tile_index, edges[biom_pointer],
-					Vector2i(randi() % 4, biom_pointer)
+					Vector2i(weighted_random_0_3(), biom_pointer)
 				)
 
 		fill_counter -= 1
 		biom_pointer = (biom_pointer + 1) % (number_of_bioms + 1)
 
+
+func weighted_random_0_3():
+	var rand_val = randf()
+	if rand_val < 0.75:
+		return 0
+	elif rand_val < 0.9:
+		return 1
+	elif rand_val < 0.97:
+		return 2
+	else:
+		return 3
 
 func vec_distance(a: Vector2i, b: Vector2i):
 	return sqrt(pow((a.x - b.x), 2) + pow((a.y - b.y), 2))
@@ -159,3 +172,22 @@ func get_point_path(path: Array[Vector2i]):
 	for vec in path:
 		point_path.append(map_to_local(vec))
 	return PackedVector2Array(point_path)
+	
+func create_building(option):
+	var building_tile = Vector2i(1, 1)
+	var player_position = player.global_position
+	var tilemap_position = local_to_map(player_position)
+	
+	var target_walkable = get_cell_tile_data(ground_layer, tilemap_position, false).get_custom_data("walkable")
+	
+	if target_walkable:
+		if option == "PowerPlant":
+			building_tile = Vector2i(3, 1)
+		elif option == "SteelManufactory":
+			building_tile = Vector2i(5, 1)
+		elif option == "WaterPurifier":
+			building_tile = Vector2i(7, 1)
+		elif option == "OxygenTank":
+			building_tile = Vector2i(9, 1)
+				
+		set_cell(ground_layer, tilemap_position, 1, building_tile)

@@ -1,15 +1,18 @@
 extends Node2D
 @onready var tile_map = $"../TileMap"
+@onready var animation_player = $AnimationPlayer
 var ground_layer = 0
 var current_path: Array[Vector2i]
 var current_point_path: PackedVector2Array
 var target_position: Vector2
 var is_moving: bool
+var faceing_right: bool
 
 @onready var drag_timer = $dragTimer
 var click_position
 
 @onready var player_camera = $"../PlayerCamera"
+
 
 func _unhandled_input(event):
 	if event is InputEventScreenTouch:
@@ -29,7 +32,7 @@ func _unhandled_input(event):
 					var tile_data = tile_map.get_cell_tile_data(ground_layer,tile_position,false)
 					var can_stand_near = false
 					for cell in tile_map.get_surrounding_cells(tile_position):
-						if tile_map.get_cell_tile_data(ground_layer, cell, false).get_custom_data("walkable"):
+						if tile_map.get_cell_tile_data(ground_layer, cell, false) != null and tile_map.get_cell_tile_data(ground_layer, cell, false).get_custom_data("walkable"):
 							can_stand_near = true
 					if tile_data != null and tile_data.get_custom_data("walkable") or can_stand_near:
 						var path
@@ -51,11 +54,18 @@ func _unhandled_input(event):
 func _physics_process(_delta):
 	if current_path.is_empty():
 		return
-		
-	if is_moving == false:
-		target_position = tile_map.map_to_local(current_path.front())
-		is_moving = true
 	
+	# sprawdzam kierunek gracza by dostosować animację
+	is_moving = true
+	target_position = tile_map.map_to_local(current_path.front())
+	faceing_right = position.x-target_position.x < 0
+	if faceing_right:
+		$PlayerSprite.flip_h = false
+	else:
+		$PlayerSprite.flip_h = true
+	animation_player.play("walking")
+	
+
 	# Sprawdzenie czy kamera jest na graczu z możliwością niewielkiego błędu
 	var distance_between_camera_and_player = player_camera.global_position.distance_squared_to(global_position)
 	if distance_between_camera_and_player < 500:
@@ -65,7 +75,7 @@ func _physics_process(_delta):
 	if global_position == target_position:
 		current_path.pop_front()
 
-		if current_path.is_empty() == false:
-			target_position = tile_map.map_to_local(current_path.front())
-		else:
+		if current_path.is_empty():
+			#gdy pezestaje iść kończe animacje
 			is_moving = false
+			animation_player.play("Idle")
