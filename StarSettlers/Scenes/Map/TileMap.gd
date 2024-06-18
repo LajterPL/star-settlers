@@ -1,5 +1,10 @@
 extends TileMap
 @onready var player = $"../Player"
+@onready var materials_ui = $"../PlayerCamera/UI/MaterialsUI"
+@onready var oxygen = $"../PlayerCamera/UI/MaterialsUI/Oxygen"
+@onready var water = $"../PlayerCamera/UI/MaterialsUI/Water"
+@onready var electr = $"../PlayerCamera/UI/MaterialsUI/Electricity"
+@onready var steel = $"../PlayerCamera/UI/MaterialsUI/Steel"
 
 # id warstwy podłoża
 var ground_layer = 0
@@ -182,6 +187,24 @@ func get_point_path(path: Array[Vector2i]):
 		point_path.append(map_to_local(vec))
 	return PackedVector2Array(point_path)
 	
+func take_materials(oxygen_count, steel_count, electr_count, water_count):
+	var ox = int(oxygen.text)
+	var ste = int(steel.text)
+	var elec = int(electr.text)
+	var wat = int(water.text)
+	ox -= oxygen_count
+	ste -= steel_count
+	elec -= electr_count
+	wat -= water_count
+	
+	if (ox >= 0 and ste >= 0 and elec >= 0 and wat >= 0):
+		oxygen.text = str(ox)
+		steel.text = str(ste)
+		electr.text = str(elec)
+		water.text = str(wat)
+		return true
+	return false
+
 func create_building(option):
 	var building_tile = Vector2i(1, 1)
 	var player_position = player.global_position
@@ -191,12 +214,23 @@ func create_building(option):
 	
 	if target_walkable:
 		if option == "PowerPlant":
-			building_tile = Vector2i(3, 1)
+			if take_materials(15, 20, 5, 25):
+				building_tile = Vector2i(3, 1)
+				materials_ui.electr_gain += 5
+				set_cell(ground_layer, tilemap_position, 1, building_tile)
 		elif option == "SteelManufactory":
-			building_tile = Vector2i(5, 1)
+			if take_materials(15, 5, 50, 25):
+				building_tile = Vector2i(5, 1)
+				materials_ui.steel_gain += 5
+				set_cell(ground_layer, tilemap_position, 1, building_tile)
 		elif option == "WaterPurifier":
-			building_tile = Vector2i(7, 1)
+			if take_materials(5, 20, 15, 25):
+				building_tile = Vector2i(7, 1)
+				materials_ui.water_gain += 5
+				set_cell(ground_layer, tilemap_position, 1, building_tile)
 		elif option == "OxygenTank":
-			building_tile = Vector2i(9, 1)
+			if take_materials(15, 35, 5, 5):
+				building_tile = Vector2i(9, 1)
+				materials_ui.oxygen_gain += 5
+				set_cell(ground_layer, tilemap_position, 1, building_tile)
 				
-		set_cell(ground_layer, tilemap_position, 1, building_tile)

@@ -111,6 +111,7 @@ func check_teleport():
 		clear_path_after_teleport()
 	
 func clear_path_after_teleport():
+	player_camera.global_position = global_position
 	current_path = []
 	current_point_path = []
 	is_moving = false
