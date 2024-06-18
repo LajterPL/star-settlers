@@ -34,16 +34,18 @@ func _on_eq_button_pressed():
 	
 	new_scene_instance.connect("back_pressed", _on_eq_closed)
 	
-	menu_buttons.hide()
-	chat_button.hide()
+	show_ui = false
 
 func _on_eq_closed():
-	menu_buttons.show()
+	show_ui = true
 	
 func _process(delta):
 	
 	menu_buttons.visible = show_ui
 	
+	if player.is_chatting:
+		return
+		
 	# Wykrywanie NPC w pobliżu
 	var bodies : Array[Node2D] = talk_range.get_overlapping_bodies()
 	
@@ -58,16 +60,12 @@ func _process(delta):
 	
 	target_npc = bodies[0]
 	
-	if not target_npc.is_chatting:
-		chat_button.visible = show_ui
-		player.is_chatting = false
-		
+	chat_button.visible = show_ui
 	
 func sort_by_distance(a : Node2D, b : Node2D):
 	var player_pos = player.global_position
 	
 	return a.global_position.distance_to(player_pos) < b.global_position.distance_to(player_pos)
-
 
 func _on_chat_button_pressed():
 	chat_button.hide()
@@ -75,9 +73,14 @@ func _on_chat_button_pressed():
 	
 	target_npc.chat()
 	
+	target_npc.connect("dialog_ended", _on_chat_closed)
+	
 	player.is_chatting = true
 	show_ui = false
 
+func _on_chat_closed():
+	show_ui = true
+	player.is_chatting = false
 
 func _on_base_pressed():
 	var base_menu = base_menu_scene.instantiate()
