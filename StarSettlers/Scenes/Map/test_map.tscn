@@ -751,7 +751,6 @@ shape = SubResource("CircleShape2D_bcqyr")
 scale = Vector2(0.041553, 0.041553)
 limit_left = -100
 limit_top = -100
-limit_bottom = 8000
 position_smoothing_enabled = true
 script = ExtResource("8_d5qpy")
 min_zoom = 0.1

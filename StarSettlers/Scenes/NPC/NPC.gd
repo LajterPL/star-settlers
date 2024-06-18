@@ -1,5 +1,7 @@
 extends Node2D
 
+signal dialog_ended
+
 @onready var tile_map: TileMap = $"../TileMap"
 @onready var player = $"../Player"
 @onready var ui = $"../PlayerCamera/UI"
@@ -148,6 +150,8 @@ func end_chat():
 	chat_instance = null
 	is_chatting = false
 	is_roaming = true
+	
+	emit_signal("dialog_ended")
 	
 func choose(array: Array):
 	return array[randi() % array.size()]
