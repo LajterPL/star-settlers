@@ -34,12 +34,22 @@ func progress_dialog():
 		
 		var nextDialog = dialogQueue.pop_front()
 		
+		var marginContrainer = MarginContainer.new()
+		
+		marginContrainer.add_theme_constant_override("margin_left", 10)
+		marginContrainer.add_theme_constant_override("margin_right", 10)
+		marginContrainer.add_theme_constant_override("margin_top", 10)
+		marginContrainer.add_theme_constant_override("margin_bottom", 10)
+		
+		dialogContainer.add_child(marginContrainer)
+		
+		
 		var newLabel : RichTextLabel = RichTextLabel.new()
 		newLabel.text = nextDialog.content
 		newLabel.fit_content = true
 		newLabel.scroll_active = false
 		newLabel.focus_mode = Control.FOCUS_CLICK
-		dialogContainer.add_child(newLabel)
+		marginContrainer.add_child(newLabel)
 		
 		if nextDialog.type == "decision":
 			dialogOptions.show()

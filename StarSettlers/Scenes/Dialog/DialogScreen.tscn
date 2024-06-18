@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://3wokym7tp8hl"]
+[gd_scene load_steps=3 format=3 uid="uid://3wokym7tp8hl"]
 
 [ext_resource type="Script" path="res://Scenes/Dialog/DialogScreen.gd" id="1_j2lh3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0sup"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 
 [node name="DialogueScreen" type="VBoxContainer"]
 top_level = true
@@ -21,15 +28,23 @@ script = ExtResource("1_j2lh3")
 [node name="DialogScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_g0sup")
 horizontal_scroll_mode = 0
 
 [node name="DialogContainer" type="VBoxContainer" parent="DialogScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
 theme_override_constants/separation = 25
 
-[node name="Dialog" type="RichTextLabel" parent="DialogScrollContainer/DialogContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="DialogScrollContainer/DialogContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="Dialog" type="RichTextLabel" parent="DialogScrollContainer/DialogContainer/MarginContainer"]
 visible = false
 layout_mode = 2
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper faucibus diam, sed efficitur justo euismod vitae. Sed molestie dolor id tincidunt finibus. Nullam imperdiet massa purus, in eleifend eros dignissim a. In libero lacus, pulvinar vitae felis eget, cursus lacinia lacus. Nunc egestas eros lectus, nec vestibulum quam eleifend sed. Curabitur dapibus, urna sed sodales tempor, lectus magna rhoncus erat, sit amet fermentum enim ipsum eget augue. Fusce ipsum velit, bibendum id elementum non, consequat eget lorem. Nullam et ligula mollis, rhoncus nulla at, varius erat. Cras hendrerit turpis eget lacinia gravida. Nulla pulvinar erat sed eleifend dignissim. "
