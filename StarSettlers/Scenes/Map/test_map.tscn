@@ -754,11 +754,8 @@ shape = SubResource("CircleShape2D_bcqyr")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 scale = Vector2(0.041553, 0.041553)
-<<<<<<< HEAD
-=======
 limit_left = -100
 limit_top = -100
->>>>>>> 61c749420d62b1c1b2df8b771f5e436ff07cc4b0
 position_smoothing_enabled = true
 script = ExtResource("8_d5qpy")
 
