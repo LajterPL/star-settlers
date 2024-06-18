@@ -11,10 +11,12 @@ func _ready():
 	GameInfo.map = self
 	
 	generate_bioms_layout()
+	add_border(Vector2i(4, 1), 30)
+
 		
 
 ## główna funkcja generowania mapy
-## iteruje po cistach krawędzi i wypełnia tak długo jak ma miejsce
+## iteruje po polach krawędzi i wypełnia tak długo jak ma miejsce
 ## biom początkowy dodatkowo ograniczam dystansem
 func generate_bioms_layout():
 	var number_of_bioms = 5
@@ -42,7 +44,14 @@ func generate_bioms_layout():
 
 		fill_counter -= 1
 		biom_pointer = (biom_pointer + 1) % (number_of_bioms + 1)
-
+	
+# dodawanie ramki
+func add_border(border_tile, border_width: int):
+	for x in range(0, map_size.x + 2* border_width):
+		for y in range(0, map_size.y + 2* border_width):
+			if x <= border_width or x >= border_width + map_size.x or y <= border_width or y >= border_width + map_size.y:
+				set_cell(ground_layer, Vector2i(x - border_width, y - border_width), 3, border_tile)
+				#set_cell(ground_layer, neighbor, 3, biom_colour)
 
 func weighted_random_0_3():
 	var rand_val = randf()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhb1x3jsm3msn"]
 
 [ext_resource type="Script" path="res://Scenes/NPC/NPC.gd" id="1_hfvgw"]
-[ext_resource type="Texture2D" uid="uid://bbm4lnv33dn53" path="res://new_Sprites/enemy-astronaut.png" id="2_2havk"]
+[ext_resource type="Texture2D" uid="uid://wbdhnebepiak" path="res://new_Sprites/enemy-astronaut.png" id="2_2havk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8j4aj"]
 size = Vector2(12, 16)
