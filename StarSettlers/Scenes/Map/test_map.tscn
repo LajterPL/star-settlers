@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dnk37emhmbtxu"]
+[gd_scene load_steps=32 format=3 uid="uid://dnk37emhmbtxu"]
 
 [ext_resource type="Script" path="res://Scenes/Map/test_map.gd" id="1_kjgj2"]
 [ext_resource type="Texture2D" uid="uid://ckf6iba8uvmgh" path="res://new_Sprites/tile_set_2.png" id="3_2y2cd"]
@@ -615,11 +615,39 @@ sources/3 = SubResource("TileSetAtlasSource_fo8kj")
 sources/4 = SubResource("TileSetAtlasSource_505fv")
 tile_proxies/coords_level = [[0, Vector2i(0, 0)], [15, Vector2i(0, 0)], [1, Vector2i(0, 0)], [15, Vector2i(1, 0)], [2, Vector2i(0, 0)], [15, Vector2i(2, 0)], [3, Vector2i(0, 0)], [15, Vector2i(3, 0)], [4, Vector2i(0, 0)], [15, Vector2i(4, 0)], [5, Vector2i(0, 0)], [15, Vector2i(5, 0)], [7, Vector2i(0, 0)], [14, Vector2i(0, 0)], [8, Vector2i(0, 0)], [14, Vector2i(1, 0)], [9, Vector2i(0, 0)], [14, Vector2i(2, 0)], [10, Vector2i(0, 0)], [13, Vector2i(0, 0)], [11, Vector2i(0, 0)], [13, Vector2i(1, 0)], [12, Vector2i(0, 0)], [13, Vector2i(2, 0)], [13, Vector2i(0, 0)], [15, Vector2i(6, 0)], [13, Vector2i(1, 0)], [15, Vector2i(7, 0)], [13, Vector2i(2, 0)], [15, Vector2i(8, 0)], [14, Vector2i(0, 0)], [15, Vector2i(9, 0)], [14, Vector2i(1, 0)], [15, Vector2i(10, 0)], [14, Vector2i(2, 0)], [15, Vector2i(11, 0)]]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqi8h"]
-size = Vector2(86, 339)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t48b0"]
+size = Vector2(100, 300)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bcqyr"]
 radius = 200.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjrxq"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ut6i"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bb5gy"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rp5te"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 
 [node name="test_lvl" type="Node2D"]
 script = ExtResource("1_kjgj2")
@@ -684,20 +712,22 @@ metadata/width = 5.0
 
 [node name="spaceship" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spaceship"]
-position = Vector2(322, 84.5)
-shape = SubResource("RectangleShape2D_tqi8h")
-
 [node name="base" type="Sprite2D" parent="spaceship"]
+texture_filter = 1
 position = Vector2(339, 107)
 scale = Vector2(0.617188, 0.617188)
 texture = ExtResource("18_mx16s")
 
 [node name="top" type="Sprite2D" parent="spaceship"]
 z_index = 1
+texture_filter = 1
 position = Vector2(339, 107)
 scale = Vector2(0.617, 0.617)
 texture = ExtResource("12_t5gsn")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="spaceship"]
+position = Vector2(323, 99)
+shape = SubResource("RectangleShape2D_t48b0")
 
 [node name="NPC" parent="." instance=ExtResource("3_q6ifx")]
 position = Vector2(727, 179)
@@ -735,22 +765,28 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="PlayerCamera/UI/MenuButtons"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_rjrxq")
 icon = ExtResource("12_g3hfb")
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button2" type="Button" parent="PlayerCamera/UI/MenuButtons"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ut6i")
 icon = ExtResource("13_nbt3w")
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button3" type="Button" parent="PlayerCamera/UI/MenuButtons"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_bb5gy")
 icon = ExtResource("14_ah812")
 icon_alignment = 1
 expand_icon = true
@@ -761,8 +797,11 @@ anchor_left = 0.85
 anchor_top = 0.85
 anchor_right = 0.95
 anchor_bottom = 0.95
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_rp5te")
 text = "Chat"
 
+[connection signal="pressed" from="spaceship/TouchScreenButton" to="PlayerCamera/UI" method="_on_base_pressed"]
 [connection signal="pressed" from="PlayerCamera/UI/MenuButtons/Button2" to="PlayerCamera/UI" method="_on_eq_button_pressed"]
 [connection signal="pressed" from="PlayerCamera/UI/MenuButtons/Button3" to="PlayerCamera/UI" method="_on_button_3_pressed"]
 [connection signal="pressed" from="PlayerCamera/UI/ChatButton" to="PlayerCamera/UI" method="_on_chat_button_pressed"]

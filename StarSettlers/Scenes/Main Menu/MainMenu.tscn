@@ -1,18 +1,42 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvhsnl78x344t"]
+[gd_scene load_steps=12 format=3 uid="uid://cvhsnl78x344t"]
 
 [ext_resource type="Script" path="res://Scenes/Main Menu/MainMenu.gd" id="1_4idhe"]
+[ext_resource type="Texture2D" uid="uid://wtyp7fi76isx" path="res://Resources/main_menu_bg.png" id="2_uvb3h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gkg1e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eaacb"]
-size = Vector2(107, 90)
+size = Vector2(600, 600)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lnuv"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffhp2"]
-size = Vector2(161, 119)
+size = Vector2(150, 100)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbgrn"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kspfk"]
-size = Vector2(161, 119)
+size = Vector2(150, 100)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xk4sd"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gt3k4"]
-size = Vector2(117, 88)
+size = Vector2(150, 100)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wau6p"]
 font_size = 100
@@ -23,73 +47,69 @@ outline_color = Color(0, 0, 0, 1)
 script = ExtResource("1_4idhe")
 
 [node name="NewGameButton" type="Button" parent="."]
+texture_filter = 1
 anchors_preset = -1
-anchor_left = 0.081
-anchor_top = 0.349
+anchor_left = 0.1
+anchor_top = 0.7
 anchor_right = 0.165
-anchor_bottom = 0.474
-offset_left = 0.32
-offset_top = -0.279999
-offset_right = -0.200012
-offset_bottom = -0.280029
+anchor_bottom = 0.7
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gkg1e")
 text = "New Game"
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="NewGameButton"]
-position = Vector2(54, 44)
+position = Vector2(175, -19)
 shape = SubResource("RectangleShape2D_eaacb")
 
 [node name="ContinueButton" type="Button" parent="."]
 anchors_preset = -1
-anchor_left = 0.187
-anchor_top = 0.461
-anchor_right = 0.312
-anchor_bottom = 0.626
+anchor_left = 0.55
+anchor_top = 0.8
+anchor_right = 0.65
+anchor_bottom = 0.9
 offset_left = -0.360016
 offset_top = 0.0799866
 offset_right = 0.639984
 offset_bottom = 0.279968
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_6lnuv")
 text = "Continue"
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="ContinueButton"]
-position = Vector2(82, 58)
+position = Vector2(64.36, 39.92)
 shape = SubResource("RectangleShape2D_ffhp2")
 
 [node name="SettingsButton" type="Button" parent="."]
 anchors_preset = -1
-anchor_left = 0.452
-anchor_top = 0.671
-anchor_right = 0.577
-anchor_bottom = 0.836
-offset_left = -0.560059
-offset_top = -0.119995
-offset_right = 0.439941
-offset_bottom = 0.0799561
+anchor_left = 0.7
+anchor_top = 0.8
+anchor_right = 0.8
+anchor_bottom = 0.9
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xbgrn")
 text = "Settings"
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="SettingsButton"]
-position = Vector2(81.0001, 58)
+position = Vector2(64, 38)
 shape = SubResource("RectangleShape2D_kspfk")
 
 [node name="ExitButton" type="Button" parent="."]
 anchors_preset = -1
-anchor_left = 0.659
-anchor_top = 0.554
-anchor_right = 0.75
-anchor_bottom = 0.676
-offset_left = -0.52002
-offset_top = 0.119995
-offset_right = -6.10352e-05
-offset_bottom = 0.279968
+anchor_left = 0.85
+anchor_top = 0.8
+anchor_right = 0.95
+anchor_bottom = 0.9
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xk4sd")
 text = "Exit"
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="ExitButton"]
-position = Vector2(59.0001, 45)
+position = Vector2(67, 37)
 shape = SubResource("RectangleShape2D_gt3k4")
 
 [node name="Label" type="Label" parent="."]
@@ -104,6 +124,16 @@ offset_right = -0.23999
 offset_bottom = 0.360001
 text = "Star Settlers"
 label_settings = SubResource("LabelSettings_wau6p")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uvb3h")
 
 [connection signal="pressed" from="NewGameButton/TouchScreenButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="ContinueButton/TouchScreenButton" to="." method="_on_continue_button_pressed"]

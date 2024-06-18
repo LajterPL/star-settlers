@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal exited
+
 ## Wskaźniki na zakładki w menu
 @onready var tabs : Array[Control] = [$Panel/OverviewPanel, $Panel/StoragePanel, $Panel/ResearchPanel, $Panel/CommsPanel]
 
@@ -14,16 +16,7 @@ var player_equipment : Equipment
 func _ready():
 	load_resource_info([1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1])
 	
-	var eq1 = Equipment.new(4)
-	var eq2 = Equipment.new(4)
-	
-	eq1.transfer_item(Item.new(&"Patyk", "", load("res://icon.svg")))
-	eq1.transfer_item(Item.new(&"Kamień", "", load("res://icon.svg")))
-	eq1.transfer_item(Item.new(&"Karabin laserowy", "", load("res://icon.svg")))
-	eq2.transfer_item(Item.new(&"Apteczka", "", load("res://icon.svg")))
-	eq2.transfer_item(Item.new(&"Racja żywnościowa", "", load("res://icon.svg")))
-	
-	load_equipment(eq1, eq2)
+	load_equipment(GameInfo.player.equipment, GameInfo.base_eq)
 	
 	set_current_research_progress(50)
 	
@@ -166,7 +159,7 @@ func _on_research_pressed():
 
 func _on_communication_pressed():
 	switch_tab(3)
-	
 
-
-
+func _on_exit_pressed():
+	emit_signal("exited")
+	queue_free()

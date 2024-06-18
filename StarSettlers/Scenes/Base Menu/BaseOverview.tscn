@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://xmm8wr0bh6bl"]
+[gd_scene load_steps=6 format=3 uid="uid://xmm8wr0bh6bl"]
 
 [ext_resource type="Texture2D" uid="uid://dswfsfnouq0m2" path="res://icon.svg" id="1_fskvj"]
 [ext_resource type="Script" path="res://Scenes/Base Menu/BaseOverview.gd" id="1_yjl12"]
 [ext_resource type="Texture2D" uid="uid://em6ii00gwqrw" path="res://Scenes/Base Menu/research_progress_bar.png" id="2_shrxk"]
 [ext_resource type="PackedScene" uid="uid://3wokym7tp8hl" path="res://Scenes/Dialog/DialogScreen.tscn" id="4_6pwj6"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ycc8"]
+size = Vector2(250, 50)
+
 [node name="BaseOverview" type="CanvasLayer"]
 script = ExtResource("1_yjl12")
 
 [node name="TabBox" type="HBoxContainer" parent="."]
+z_index = 1
 anchors_preset = -1
 anchor_top = 0.935
 anchor_right = 1.0
@@ -22,26 +26,50 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Overview"
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="TabBox/Overview"]
+position = Vector2(127, 25.8)
+shape = SubResource("RectangleShape2D_8ycc8")
+
 [node name="Storage" type="Button" parent="TabBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Storage"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="TabBox/Storage"]
+position = Vector2(127, 25.8)
+shape = SubResource("RectangleShape2D_8ycc8")
 
 [node name="Research" type="Button" parent="TabBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Research"
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="TabBox/Research"]
+position = Vector2(127, 25.8)
+shape = SubResource("RectangleShape2D_8ycc8")
+
 [node name="Communication" type="Button" parent="TabBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Communication"
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="TabBox/Communication"]
+position = Vector2(127, 25.8)
+shape = SubResource("RectangleShape2D_8ycc8")
+
+[node name="Exit" type="Button" parent="TabBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Exit"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="TabBox/Exit"]
+position = Vector2(127, 25.8)
+shape = SubResource("RectangleShape2D_8ycc8")
+
 [node name="Panel" type="Panel" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.935
-offset_bottom = -0.200073
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -252,7 +280,6 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="StoragePanel" type="Control" parent="Panel"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -264,7 +291,7 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.45
-anchor_bottom = 1.0
+anchor_bottom = 0.9
 alignment = 1
 
 [node name="BaseEq" type="ItemList" parent="Panel/StoragePanel/BasePanel"]
@@ -294,7 +321,7 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.55
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.9
 alignment = 1
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="Panel/StoragePanel/PlayerPanel"]
@@ -315,6 +342,7 @@ icon_mode = 0
 item_0/text = ""
 
 [node name="ResearchPanel" type="Control" parent="Panel"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -613,8 +641,14 @@ wait_time = 0.3
 one_shot = true
 
 [connection signal="pressed" from="TabBox/Overview" to="." method="_on_overview_pressed"]
+[connection signal="pressed" from="TabBox/Overview/TouchScreenButton" to="." method="_on_overview_pressed"]
 [connection signal="pressed" from="TabBox/Storage" to="." method="_on_storage_pressed"]
+[connection signal="pressed" from="TabBox/Storage/TouchScreenButton" to="." method="_on_storage_pressed"]
 [connection signal="pressed" from="TabBox/Research" to="." method="_on_research_pressed"]
+[connection signal="pressed" from="TabBox/Research/TouchScreenButton" to="." method="_on_research_pressed"]
 [connection signal="pressed" from="TabBox/Communication" to="." method="_on_communication_pressed"]
+[connection signal="pressed" from="TabBox/Communication/TouchScreenButton" to="." method="_on_communication_pressed"]
+[connection signal="pressed" from="TabBox/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="TabBox/Exit/TouchScreenButton" to="." method="_on_exit_pressed"]
 [connection signal="item_clicked" from="Panel/StoragePanel/BasePanel/BaseEq" to="." method="_on_base_eq_item_clicked"]
 [connection signal="item_clicked" from="Panel/StoragePanel/PlayerPanel/PlayerEq" to="." method="_on_player_eq_item_clicked"]

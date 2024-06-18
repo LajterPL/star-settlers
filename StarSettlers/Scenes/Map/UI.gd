@@ -6,11 +6,14 @@ extends CanvasLayer
 @onready var talk_range : Area2D = $"../../Player/TalkRange"
 @onready var player = $"../../Player"
 
+var show_ui = true
+
 var target_npc = null
 
 # Deklaracja zmiennej przechowującej nową scenę
 var buildings_menu_scene = preload("res://Scenes/Build Menu/BuildMenu.tscn")
 var equipment_menu_scene = preload("res://Scenes/Equipment/EquipmentTransferUI.tscn")
+var base_menu_scene = preload("res://Scenes/Base Menu/BaseOverview.tscn")
 
 # Funkcja wywoływana przy naciśnięciu guzika
 func _on_button_3_pressed():
@@ -39,6 +42,8 @@ func _on_eq_closed():
 	
 func _process(delta):
 	
+	menu_buttons.visible = show_ui
+	
 	# Wykrywanie NPC w pobliżu
 	var bodies : Array[Node2D] = talk_range.get_overlapping_bodies()
 	
@@ -54,9 +59,7 @@ func _process(delta):
 	target_npc = bodies[0]
 	
 	if not target_npc.is_chatting:
-		chat_button.show()
-		menu_buttons.show()
-		
+		chat_button.visible = show_ui
 		player.is_chatting = false
 		
 	
@@ -73,3 +76,25 @@ func _on_chat_button_pressed():
 	target_npc.chat()
 	
 	player.is_chatting = true
+	show_ui = false
+
+
+func _on_base_pressed():
+	var base_menu = base_menu_scene.instantiate()
+	add_child(base_menu)
+	
+	base_menu.connect("exited", _on_base_exited)
+	
+	chat_button.hide()
+	menu_buttons.hide()
+	
+	show_ui = false
+	player.is_chatting = true
+	
+func _on_base_exited():
+	
+	menu_buttons.show()
+	
+	show_ui = true
+	player.is_chatting = false
+	

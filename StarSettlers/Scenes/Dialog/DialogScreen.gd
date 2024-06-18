@@ -30,7 +30,8 @@ func _input(event):
 
 func progress_dialog():
 	if dialogQueue.size() > 0:
-		dialogOptions.hide()
+		for i in range(dialogOptions.get_child_count()):
+				dialogOptions.get_child(i).hide()
 		
 		var nextDialog = dialogQueue.pop_front()
 		
@@ -48,14 +49,9 @@ func progress_dialog():
 		newLabel.text = nextDialog.content
 		newLabel.fit_content = true
 		newLabel.scroll_active = false
-		newLabel.focus_mode = Control.FOCUS_CLICK
 		marginContrainer.add_child(newLabel)
 		
 		if nextDialog.type == "decision":
-			dialogOptions.show()
-			
-			for i in range(dialogOptions.get_child_count()):
-				dialogOptions.get_child(i).hide()
 			
 			for i in range(nextDialog.options.size()):
 				var button = dialogOptions.get_child(i)

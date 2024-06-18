@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4i7roqw1qmga"]
+[gd_scene load_steps=13 format=3 uid="uid://d4i7roqw1qmga"]
 
 [ext_resource type="Script" path="res://Scenes/Main Menu/NewGame.gd" id="1_ilmf5"]
 [ext_resource type="Texture2D" uid="uid://dswfsfnouq0m2" path="res://icon.svg" id="1_winw1"]
@@ -6,14 +6,48 @@
 [sub_resource type="LabelSettings" id="LabelSettings_gote7"]
 font_size = 32
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ih3ii"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cs6o"]
+size = Vector2(180, 90)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32h0p"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
 [sub_resource type="LabelSettings" id="LabelSettings_0dems"]
 font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_krf6m"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ll3sa"]
 size = Vector2(445, 70)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o581j"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3x663"]
 size = Vector2(445, 70)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_caibu"]
+bg_color = Color(0.192157, 0.192157, 0.192157, 1)
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_ilmf5")
@@ -47,23 +81,38 @@ stretch_mode = 5
 [node name="HBoxContainer" type="HBoxContainer" parent="FactionSelection"]
 layout_mode = 1
 anchors_preset = -1
+anchor_left = 0.1
 anchor_top = 0.9
-anchor_right = 1.0
+anchor_right = 0.9
 anchor_bottom = 1.0
 theme_override_constants/separation = 20
 alignment = 1
 
 [node name="PrevFactionButton" type="Button" parent="FactionSelection/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_ih3ii")
 text = "<"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="FactionSelection/HBoxContainer/PrevFactionButton"]
+position = Vector2(79, 24.4)
+shape = SubResource("RectangleShape2D_7cs6o")
 
 [node name="FactionName" type="Label" parent="FactionSelection/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "FactionName"
+horizontal_alignment = 1
 
 [node name="NextFactionButton" type="Button" parent="FactionSelection/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_32h0p")
 text = ">"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="FactionSelection/HBoxContainer/NextFactionButton"]
+position = Vector2(79, 24.4)
+shape = SubResource("RectangleShape2D_7cs6o")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchors_preset = -1
@@ -113,6 +162,7 @@ theme_override_constants/separation = 350
 [node name="BackButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_krf6m")
 text = "Back"
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="HBoxContainer/BackButton"]
@@ -122,6 +172,7 @@ shape = SubResource("RectangleShape2D_ll3sa")
 [node name="ConfirmButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_o581j")
 text = "Confirm
 "
 
@@ -129,7 +180,20 @@ text = "Confirm
 position = Vector2(222, 34.0001)
 shape = SubResource("RectangleShape2D_3x663")
 
+[node name="Panel" type="Panel" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_caibu")
+
 [connection signal="pressed" from="FactionSelection/HBoxContainer/PrevFactionButton" to="." method="_on_prev_faction_button_pressed"]
+[connection signal="released" from="FactionSelection/HBoxContainer/PrevFactionButton/TouchScreenButton" to="." method="_on_prev_faction_button_pressed"]
 [connection signal="pressed" from="FactionSelection/HBoxContainer/NextFactionButton" to="." method="_on_next_faction_button_pressed"]
+[connection signal="pressed" from="FactionSelection/HBoxContainer/NextFactionButton/TouchScreenButton" to="." method="_on_next_faction_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/BackButton/TouchScreenButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/ConfirmButton/TouchScreenButton" to="." method="_on_confirm_button_pressed"]

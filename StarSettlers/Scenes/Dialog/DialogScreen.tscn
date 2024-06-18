@@ -1,8 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://3wokym7tp8hl"]
+[gd_scene load_steps=7 format=3 uid="uid://3wokym7tp8hl"]
 
 [ext_resource type="Script" path="res://Scenes/Dialog/DialogScreen.gd" id="1_j2lh3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0sup"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdjgf"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hqul"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ns4wk"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cffyd"]
 bg_color = Color(0.156863, 0.156863, 0.156863, 1)
 border_width_left = 2
 border_width_top = 2
@@ -32,8 +60,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_g0sup")
 horizontal_scroll_mode = 0
 
 [node name="DialogContainer" type="VBoxContainer" parent="DialogScrollContainer"]
+clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 25
 
 [node name="MarginContainer" type="MarginContainer" parent="DialogScrollContainer/DialogContainer"]
@@ -69,24 +99,30 @@ scroll_active = false
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.4
+theme_override_constants/separation = 8
 
 [node name="OptionButton" type="Button" parent="DialogOptions"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_pdjgf")
 text = "Option 1"
 
 [node name="OptionButton2" type="Button" parent="DialogOptions"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_6hqul")
 text = "Option 2
 "
 
 [node name="OptionButton3" type="Button" parent="DialogOptions"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ns4wk")
 text = "Option 3"
 
 [node name="OptionButton4" type="Button" parent="DialogOptions"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_cffyd")
 text = "Option 4"
 
+[connection signal="child_entered_tree" from="DialogScrollContainer/DialogContainer" to="." method="_on_new_dialog_added"]
 [connection signal="pressed" from="DialogOptions/OptionButton" to="." method="_button_1_pressed"]
 [connection signal="pressed" from="DialogOptions/OptionButton2" to="." method="_button_2_pressed"]
 [connection signal="pressed" from="DialogOptions/OptionButton3" to="." method="_button_3_pressed"]
