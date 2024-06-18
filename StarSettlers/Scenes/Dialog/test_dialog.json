@@ -17,6 +17,10 @@
 					{
 						"type": "text",
 						"content": "Hello"
+					},
+					{
+						"type": "end",
+						"content": "Goodbye"
 					}
 				]
 			},
@@ -26,6 +30,10 @@
 					{
 						"type": "text",
 						"content": "World"
+					},
+					{
+						"type": "end",
+						"content": "Goodbye"
 					}
 				]
 			}

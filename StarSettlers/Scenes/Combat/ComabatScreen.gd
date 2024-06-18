@@ -34,7 +34,9 @@ var last_clicked_character : Character
 func _ready():
 	icon_size = get_viewport().get_visible_rect().size.x / combat_area_size
 	
-	var enemy = load("res://Scenes/Combat/Character/test_enemy.tres")
+	var enemy = load("res://Resources/Character/test_enemy.tres")
+	
+	print(enemy.icon)
 	
 	new_fight({enemy: 3})
 
@@ -66,13 +68,13 @@ func new_fight(enemies : Dictionary = {}):
 	set_description("Fight!")
 	
 	# Sprawdza czy gracz może stzrelać
-	for item in game_info.player.equipment.items:
+	for item in GameInfo.player.equipment.items:
 		if item.type == Item.ItemType.RANGED:
 			shoot_button.disabled = false
 	
 	# Tworzy nową listę postaci
 	self.characters = {}
-	self.characters[game_info.player] = 0
+	self.characters[GameInfo.player] = 0
 	self.characters.merge(enemies)
 	
 	# Tworzenie wizualizacji postaci na polu walki
@@ -80,7 +82,7 @@ func new_fight(enemies : Dictionary = {}):
 		visual_panel.remove_child(node)
 		node.queue_free()
 	
-	for character in self.characters.keys():	
+	for character in self.characters.keys():
 		var container : Control = Control.new()
 		container.position = Vector2(icon_size * characters[character], 
 		(get_viewport().get_visible_rect().size.y / 4) - icon_size/2)
@@ -91,7 +93,7 @@ func new_fight(enemies : Dictionary = {}):
 		icon.texture = (character as Character).icon
 		icon.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 		
-		if character != game_info.player:
+		if character != GameInfo.player:
 			icon.flip_h = true
 		
 		container.add_child(icon)
@@ -169,6 +171,7 @@ func _on_accept_turn_pressed():
 	
 	for character in characters:
 		if character.current_hp <= 0:
+			print("test")
 			characters[character][1].queue_free()
 			characters.erase(character)
 		
@@ -322,6 +325,7 @@ func enemy_turn():
 		if character == game_info.player:
 			continue
 			
+		print(characters)
 		var char_pos = characters[character][0]
 		var player_pos = characters[game_info.player][0]
 		

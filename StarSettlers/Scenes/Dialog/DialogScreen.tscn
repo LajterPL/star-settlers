@@ -4,6 +4,7 @@
 
 [node name="DialogueScreen" type="VBoxContainer"]
 top_level = true
+z_index = 10
 y_sort_enabled = true
 clip_contents = true
 anchors_preset = -1

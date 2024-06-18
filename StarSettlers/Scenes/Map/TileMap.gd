@@ -8,6 +8,8 @@ var map_size = Vector2i(150,150)
 var radius = map_size.x/4 
 
 func _ready():
+	GameInfo.map = self
+	
 	generate_bioms_layout()
 		
 

@@ -1,5 +1,7 @@
 extends VBoxContainer
 
+signal dialog_ended
+
 @onready var dialogContainer = $DialogScrollContainer/DialogContainer
 @onready var dialogOptions = $DialogOptions
 
@@ -51,7 +53,9 @@ func progress_dialog():
 				button.show()
 			
 			dialogDecision = nextDialog.options
-	
+			
+		elif nextDialog.type == "end":
+			emit_signal("dialog_ended")
 
 func choose_option(idx : int):
 	dialogQueue = dialogDecision[idx].queue

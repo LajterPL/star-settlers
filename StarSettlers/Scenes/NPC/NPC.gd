@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var tile_map: TileMap = $"../TileMap"
 @onready var player = $"../Player"
+@onready var ui = $"../PlayerCamera/UI"
+
 var chat_instance = null
 var fight_instance = null
 var player_in_chat_zone = false
@@ -86,20 +88,10 @@ func _process(delta):
 			#print("fight")
 		pass
 	elif can_chat() and Input.is_action_just_pressed("chat") and chat_instance == null:
-		var chat_scene = preload("res://Scenes/Dialog/DialogScreen.tscn")
-		chat_instance = chat_scene.instantiate()
-		add_child(chat_instance)
-		chat_instance.move_to_front()
-		print("rozmowa")
-		is_roaming = false
-		is_chatting = true
-		chat_instance.position = position + Vector2(100, -250)
+		chat()
 	
 	if chat_instance != null and !can_chat():
-		chat_instance.queue_free()
-		chat_instance = null
-		is_chatting = false
-		is_roaming = true
+		end_chat()
 
 		
 		#play IDLE animation
@@ -137,6 +129,25 @@ func move():
 	if current_path.is_empty():
 		current_state = state.IDLE
 		
+	
+func chat():
+	var chat_scene = preload("res://Scenes/Dialog/DialogScreen.tscn")
+	chat_instance = chat_scene.instantiate()
+	ui.add_child(chat_instance)
+	
+	chat_instance.move_to_front()
+	chat_instance.connect("dialog_ended", end_chat)
+	
+	is_roaming = false
+	is_chatting = true
+	#chat_instance.position = position + Vector2(100, -250)
+	
+func end_chat():
+	chat_instance.queue_free()
+	
+	chat_instance = null
+	is_chatting = false
+	is_roaming = true
 	
 func choose(array: Array):
 	return array[randi() % array.size()]

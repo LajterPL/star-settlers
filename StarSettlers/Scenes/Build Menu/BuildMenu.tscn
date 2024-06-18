@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://dxfyvu6xmei5b"]
 
 [ext_resource type="Script" path="res://Scenes/Build Menu/BuildMenu.gd" id="1_m46ke"]
-[ext_resource type="Texture2D" uid="uid://ctf13kh0uw0v6" path="res://Resources/BuildingImages/power_plant.png" id="1_u48jn"]
-[ext_resource type="Texture2D" uid="uid://cqy4t8316ny4s" path="res://Resources/BuildingImages/water_purifier.png" id="2_bx1jw"]
-[ext_resource type="Texture2D" uid="uid://c6qn8lwxn67nr" path="res://Resources/BuildingImages/steel_manufactory.png" id="3_aywkf"]
-[ext_resource type="Texture2D" uid="uid://b0x27ajulm8jj" path="res://Resources/BuildingImages/oxygen_tank.png" id="4_6bfok"]
+[ext_resource type="Texture2D" uid="uid://b8jmsgt6lkqmj" path="res://Resources/BuildingImages/power_plant.png" id="1_u48jn"]
+[ext_resource type="Texture2D" uid="uid://c4tcb0rc010s0" path="res://Resources/BuildingImages/water_purifier.png" id="2_bx1jw"]
+[ext_resource type="Texture2D" uid="uid://mh5qfru0ipeo" path="res://Resources/BuildingImages/steel_manufactory.png" id="3_aywkf"]
+[ext_resource type="Texture2D" uid="uid://dteijhfxlgiqx" path="res://Resources/BuildingImages/oxygen_tank.png" id="4_6bfok"]
 
 [node name="Build Menu" type="CanvasLayer"]
 script = ExtResource("1_m46ke")
