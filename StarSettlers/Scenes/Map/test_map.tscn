@@ -13,11 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://cjvgac5ufcd7s" path="res://bg_Sprites/Nebula Aqua-Pink.png" id="9_7dlnp"]
 [ext_resource type="Texture2D" uid="uid://b4dpbnrl4ov60" path="res://bg_Sprites/Stars Small_1.png" id="9_ibknc"]
 [ext_resource type="Script" path="res://Scenes/Map/UI.gd" id="12_4m0s6"]
-[ext_resource type="Texture2D" uid="uid://c4cuf7f7tmkv2" path="res://Resources/MenuIcons/pixil-frame-0.png" id="12_g3hfb"]
-[ext_resource type="Texture2D" uid="uid://cxsjf20ra2spt" path="res://new_Sprites/spaceship_Y.png" id="12_t5gsn"]
-[ext_resource type="Texture2D" uid="uid://kbnjo67rker7" path="res://Resources/MenuIcons/pixil-frame-0(1).png" id="13_nbt3w"]
-[ext_resource type="Texture2D" uid="uid://c1d2efb2jpghd" path="res://Resources/MenuIcons/pixil-frame-0(3).png" id="14_ah812"]
-[ext_resource type="Texture2D" uid="uid://nau1r7v814yq" path="res://new_Sprites/spaceship_x.png" id="18_mx16s"]
+[ext_resource type="Texture2D" uid="uid://cjeeopptsqsb1" path="res://Resources/MenuIcons/pixil-frame-0.png" id="12_g3hfb"]
+[ext_resource type="Texture2D" uid="uid://dkqo4wi78ky67" path="res://new_Sprites/spaceship_Y.png" id="12_t5gsn"]
+[ext_resource type="Texture2D" uid="uid://4o2belkfihal" path="res://Resources/MenuIcons/pixil-frame-0(1).png" id="13_nbt3w"]
+[ext_resource type="Texture2D" uid="uid://cwny4nxduwgll" path="res://Resources/MenuIcons/pixil-frame-0(3).png" id="14_ah812"]
+[ext_resource type="Texture2D" uid="uid://dlxwhk7a3e5oj" path="res://new_Sprites/spaceship_x.png" id="18_mx16s"]
 [ext_resource type="Texture2D" uid="uid://cy56q1ot867nh" path="res://new_Sprites/tile_set_1.png" id="28_f5a1g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2j4xd"]
@@ -749,8 +749,12 @@ shape = SubResource("CircleShape2D_bcqyr")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 scale = Vector2(0.041553, 0.041553)
+limit_left = -100
+limit_top = -100
+limit_bottom = 8000
 position_smoothing_enabled = true
 script = ExtResource("8_d5qpy")
+min_zoom = 0.1
 
 [node name="UI" type="CanvasLayer" parent="PlayerCamera"]
 script = ExtResource("12_4m0s6")
